@@ -468,7 +468,12 @@
     font-size: 40px;
 }
 
-[data-v-d7d9b248] .image-src {
+.VPImage {
+    max-width: 960px;
+    max-height: 960px;
+}
+
+/* [data-v-d7d9b248] .image-src {
     max-width: 480px;
     max-height: 480px;
 }
@@ -487,7 +492,7 @@
         max-width: 780px;
         max-height: 780px;
     }
-}
+} */
 
 
 /* #local-search{
