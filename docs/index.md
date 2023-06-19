@@ -7,7 +7,7 @@ hero:
   text: "A Digital Garden & Portfolio Project"
   tagline: Welcome to my digital Notebook. Here you might find all things that I share via the learn in public initiative.
   image:
-    src: assets/hero-image.png
+    src: hero-image.png
     alt: Demo-Logo
   actions:
     - theme: brand

@@ -8,14 +8,14 @@ export default defineConfig({
   head: [
     ['meta', { name: 'author', content: 'Patrick Ambrose' }],
     ['meta', { name: 'keywords', content: 'digital-garden, pkm, second brain' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: 'assets/logo.png' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: 'logo.png' }]
   ],
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
     // Site Metadata
-    logo: 'assets/logo.png',
+    logo: 'logo.png',
     siteTitle: 'Patrick\'s Notebook',
 
     // Setting up local search with MiniSearch
