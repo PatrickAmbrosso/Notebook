@@ -463,6 +463,10 @@
     --vp-local-search-highlight-text: var(--vp-c-black);
 }
 
+strong {
+    color: var(--vp-c-brand-light)
+}
+
 .text[data-v-d7d9b248] {
     line-height: 64px;
     font-size: 40px;
