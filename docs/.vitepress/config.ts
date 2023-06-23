@@ -58,7 +58,7 @@ function navBar() {
   return [
     { text: 'About Me', link: '/about-me' },
     { text: 'Digital Garden', link: '/digital-garden/' },
-    { text: 'Learning Paths', link: '/learning-paths/' },
+    { text: 'Guides', link: '/learning-paths/' },
     {
       text: 'Projects',
       items: [
@@ -104,32 +104,46 @@ function sideBarDigitalGarden() {
 function sideBarLearningPaths() {
   return [
     {
-      text: 'Career Roadmaps',
-      collapsed: true,
-      link: '/learning-paths/career-roadmaps',
+      text: 'Roadmaps',
       items: [
-        { text: 'DevOps Engineer', link: '/learning-paths/devops-engineer' },
-        { text: 'Cloud Engineer', link: '/learning-paths/cloud-engineer' },
+        {
+          text: 'Career Roadmaps',
+          collapsed: true,
+          link: '/learning-paths/career-roadmaps',
+          items: [
+            { text: 'DevOps Engineer', link: '/learning-paths/devops-engineer' },
+            { text: 'Cloud Engineer', link: '/learning-paths/cloud-engineer' },
+          ]
+        },
+        {
+          text: 'Technology Roadmaps',
+          collapsed: true,
+          link: '/learning-paths/career-roadmaps',
+          items: [
+            { text: 'Computer Networking', link: '/learning-paths/devops-engineer' },
+            { text: 'Hardware and Infrastructure', link: '/learning-paths/hardware-and-infrastructure' },
+            { text: 'Operating Systems and Software', link: '/learning-paths/cloud-engineer' },
+          ]
+        },
+        {
+          text: 'Tool-based Roadmaps',
+          collapsed: true,
+          link: '/learning-paths/career-roadmaps',
+          items: [
+            { text: 'Docker', link: '/learning-paths/devops-engineer' },
+            { text: 'Hardware and Infrastructure', link: '/learning-paths/hardware-and-infrastructure' },
+            { text: 'Operating Systems and Software', link: '/learning-paths/cloud-engineer' },
+          ]
+        }
       ]
     },
     {
-      text: 'Technology Roadmaps',
+      text: 'Guides',
       collapsed: true,
-      link: '/learning-paths/career-roadmaps',
       items: [
-        { text: 'Computer Networking', link: '/learning-paths/devops-engineer' },
-        { text: 'Hardware and Infrastructure', link: '/learning-paths/hardware-and-infrastructure' },
-        { text: 'Operating Systems and Software', link: '/learning-paths/cloud-engineer' },
-      ]
-    },
-    {
-      text: 'Tool-based Roadmaps',
-      collapsed: true,
-      link: '/learning-paths/career-roadmaps',
-      items: [
-        { text: 'Docker', link: '/learning-paths/devops-engineer' },
-        { text: 'Hardware and Infrastructure', link: '/learning-paths/hardware-and-infrastructure' },
-        { text: 'Operating Systems and Software', link: '/learning-paths/cloud-engineer' },
+        { text: 'AWS', link: '/learning-paths/AWS-Guides' },
+        { text: 'Portainer', link: '/learning-paths/Portainer-Guides' },
+        { text: 'Kubernetes', link: '/learning-paths/Kubernetes-Guides' }
       ]
     }
   ]
