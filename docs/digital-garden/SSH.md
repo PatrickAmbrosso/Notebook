@@ -1,5 +1,6 @@
 ---
 title: SSH
+aside: true
 ---
 # SSH
 **Secure Shell (SSH - pronounced ESS-ESS-HEICH)**, is a cryptographic network protocol that allows secure remote access and secure file transfer between networked computers. It provides a secure and encrypted channel over an unsecured network, ensuring the confidentiality and integrity of data transmitted between the client and the server.
@@ -8,10 +9,6 @@ title: SSH
 
 ### What is SSH? 
 **Secure Shell (SSH - pronounced ESS-ESS-HEICH)**, is a cryptographic network protocol that allows secure remote access and secure file transfer between networked computers. It provides a secure and encrypted channel over an unsecured network, ensuring the confidentiality and integrity of data transmitted between the client and the server.
-
-#### asdasd
-
-
 
 ### How does SSH work?
 SSH is a protocol that enables secure remote access to computers over an insecure network. It establishes an encrypted connection between the client and server, protecting sensitive information from eavesdropping and manipulation. Following are some of the steps that SSH takes to perform ths secure connection between a client and a server.

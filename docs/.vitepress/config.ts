@@ -9,14 +9,14 @@ export default defineConfig({
   head: [
     ['meta', { name: 'author', content: 'Patrick Ambrose' }],
     ['meta', { name: 'keywords', content: 'digital-garden, pkm, second brain' }],
-    ['link', { rel: 'icon', type: 'image/png+xml', href: 'logo.png' }]
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   ],
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
     // Site Metadata
-    logo: 'logo.png',
+    logo: '/logo.png',
     siteTitle: 'Patrick\'s Notebook',
 
     outline: [2,4],
@@ -32,9 +32,9 @@ export default defineConfig({
 
     // Custom Sidebar Configuration
     sidebar: {
-      '/digital-garden/': sideBarDigitalGarden(),
-      '/learning-paths/': sideBarLearningPaths(),
-      '/projects/': sideBarProjects()
+      '/Digital-Garden/': sideBarDigitalGarden(),
+      '/Learning-Guides/': sideBarGuides(),
+      '/Projects/': sideBarProjects()
     },
 
     socialLinks: [
@@ -56,18 +56,11 @@ export default defineConfig({
 
 function navBar() {
   return [
-    { text: 'About Me', link: '/about-me' },
-    { text: 'Digital Garden', link: '/digital-garden/' },
-    { text: 'Guides', link: '/learning-paths/' },
-    {
-      text: 'Projects',
-      items: [
-        { text: 'Portfolio Website', link: '/projects/portfolio-website' },
-        { text: 'Home Lab', link: '/projects/home-lab' },
-        { text: 'PowerShell AWS CLI Tool', link: '/projects/pwsh-aws-cli-tool' }
-      ]
-    },
-    { text: 'Contact Me', link: '/contact' }
+    { text: 'About Me', link: '/About' },
+    { text: 'Digital Garden', link: '/Digital-Garden/' },
+    { text: 'Learning Guides', link: '/Learning-Guides/' },
+    { text: 'Projects', link: '/Projects/' },
+    { text: 'Contact Me', link: '/Contact' }
   ]
 }
 
@@ -75,6 +68,9 @@ function navBar() {
 
 function sideBarDigitalGarden() {
   return [
+    {
+      text: 'Welcome', link: '/Digital-Garden/'
+    },
     {
       text: 'Science and Technology',
       collapsed: true,
@@ -93,7 +89,8 @@ function sideBarDigitalGarden() {
           link: '/digital-garden/Remote-Server-Management',
           items: [
             { text: 'SSH', link: '/digital-garden/SSH' },
-            { text: 'RDP', link: '/digital-garden/RDP' },              
+            { text: 'RDP', link: '/digital-garden/RDP' },
+            { text: 'VCS', link: '/digital-garden/Version-Control-System' },              
           ]
         },
       ]
@@ -101,7 +98,7 @@ function sideBarDigitalGarden() {
   ]
 }
 
-function sideBarLearningPaths() {
+function sideBarGuides() {
   return [
     {
       text: 'Roadmaps',

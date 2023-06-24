@@ -1,3 +1,1 @@
-
-
-Index of the Digital Garden
+Welcome to the Digital Garden!
