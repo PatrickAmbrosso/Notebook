@@ -24,7 +24,7 @@ It is a system that records changes made to a file or a set of files over a peri
 ## Centralized Version Control Systems (CVCS)
 - In a centralized Version Control System, the changes are tracked in a *central location* on a server.
 - A number of clients connect to this server and check out the files from it.
-- Systems such as [CVS](CVS.md#), [Subversion](Subversion.md#) and [Perforce](Perforce.md#) are of the Centralized Version Control System type.
+- Systems such as CVS, Subversion and Perforce are of the Centralized Version Control System type.
 - For many years, this has been the standard for version control.
 - Some of the advantages of Centralized VCS over the local VCS are
 	- Central location where everyone's *work is monitored*.
@@ -34,7 +34,7 @@ It is a system that records changes made to a file or a set of files over a peri
 ## Distributed Version Control Systems (DVCS)
 - A Distributed Version Control System or DVCS is a system where each of the clients mirror the entire snapshot of the repository, thus each of the client has a full working copy of the files along with the change history.
 - If the server gets corrupted, the data can be transferred from the client to the server and vice versa.
-- Systems such as [Git](../../../../Git.md#), [Mercurial](Mercurial.md#), [Bazaar](Bazaar.md#) or [Darcs](Darcs.md#) are of this DVCS type.
+- Systems such as Git, Mercurial, Bazaar or Darcs are of this DVCS type.
 - Advantages of this system
 	- Central server which *enables visibility* across the clients.
 	- *No single point of failure* in both server and the client.
