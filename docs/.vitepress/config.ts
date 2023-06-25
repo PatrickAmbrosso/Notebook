@@ -33,7 +33,7 @@ export default defineConfig({
     // Custom Sidebar Configuration
     sidebar: {
       '/Digital-Garden/': sideBarDigitalGarden(),
-      '/Learning-Guides/': sideBarGuides(),
+      '/Learning-Guides/': sideBarLearningGuides(),
       '/Projects/': sideBarProjects()
     },
 
@@ -98,7 +98,7 @@ function sideBarDigitalGarden() {
   ]
 }
 
-function sideBarGuides() {
+function sideBarLearningGuides() {
   return [
     {
       text: 'Roadmaps',
