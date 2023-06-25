@@ -1,8 +1,24 @@
 ---
-title: SSH
 aside: true
 ---
-# SSH
+::: details Backlinks
+[[toc]]
+:::
+
+::: details Video Guide
+
+This video walksthrough the steps to be taken for setting up CloudFlare tunnel to your homelab services.
+
+<div class="vid-embed">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+
+Share the video if you found it useful!
+
+:::
+
+## SSH
 **Secure Shell (SSH - pronounced ESS-ESS-HEICH)**, is a cryptographic network protocol that allows secure remote access and secure file transfer between networked computers. It provides a secure and encrypted channel over an unsecured network, ensuring the confidentiality and integrity of data transmitted between the client and the server.
 
 ## Introduction to SSH
