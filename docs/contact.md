@@ -10,3 +10,4 @@ hero:
     alr: Hero Image
 ---
 
+Contact me via my socials.
