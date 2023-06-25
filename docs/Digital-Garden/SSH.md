@@ -18,6 +18,11 @@ Share the video if you found it useful!
 
 :::
 
+```bash
+ssh username@ipaddress
+
+```
+
 ## SSH
 **Secure Shell (SSH - pronounced ESS-ESS-HEICH)**, is a cryptographic network protocol that allows secure remote access and secure file transfer between networked computers. It provides a secure and encrypted channel over an unsecured network, ensuring the confidentiality and integrity of data transmitted between the client and the server.
 
