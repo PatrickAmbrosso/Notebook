@@ -107,7 +107,7 @@ function sideBarProjects() {
       collapsed: true,
       link: '/Projects/Personal-Website/',
       items: [
-        { text: 'Vitepress Site', link: '/Projects/Personal-Website/VitePress' }
+        { text: 'Vitepress Site', link: '/Projects/Personal-Website/Vitepress' }
       ]
     },
     {

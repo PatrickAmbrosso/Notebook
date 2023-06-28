@@ -12,5 +12,5 @@ hero:
   actions:
     - theme: alt
       text: Check out my Resume
-      link: https://www.patrickambrose.com/public/resume-2023.pdf
+      link: 'https://www.patrickambrose.com/public/resume-2023.pdf'
 ---
