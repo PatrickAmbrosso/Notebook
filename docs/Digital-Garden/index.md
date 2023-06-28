@@ -11,12 +11,12 @@ prev:
   text: 
   link: false
 next:
-  text: 
-  link: false
+  text: 'Tools I Use'
+  link: '/Digital-Garden/Tools-I-Use'
 # Dataview Query Fields
 content-type: 
 ---
-## Welcome to my Digital Garden
+# Welcome to the Digital Garden
 Hey there, this is the collection of personal notes of one Patrick Ambrose. This is always going to be a work in progress and things might not be polished. But feel free to explore and hopefully you get some value out of it. For my day job, I work as a systems administrator and a digitization specialist and soon hoping to get into DevOps, Cloud and Data. But this collection of notes could contain anything from Cuneiforms to Cloud Technology, and it is a dump of things that I come across and explore, and not a representation of my views or ideologies.
 
 ## My Approach to PKM
