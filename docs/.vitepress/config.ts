@@ -105,7 +105,7 @@ function sideBarProjects() {
     {
       text: 'Portfolio Website',
       collapsed: true,
-      link: '/projects/Portfolio-Website/',
+      link: '/Projects/Portfolio-Website/',
       items: [
         { text: 'Vitepress Site', link: '/Projects/Personal-Website/VitePress' }
       ]
@@ -113,7 +113,7 @@ function sideBarProjects() {
     {
       text: 'Home Lab',
       collapsed: true,
-      link: '/projects/HomeLab/',
+      link: '/Projects/HomeLab/',
       items: [
         { text: 'Getting Started', link: '/Projects/HomeLab/Getting-Started' },
         { text: 'Purchasing Equipment', link: '/Projects/HomeLab/Purchasing-Equipment' },
