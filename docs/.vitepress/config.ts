@@ -35,7 +35,7 @@ export default defineConfig({
     // Custom Sidebar Configuration
     sidebar: {
       '/Digital-Garden/': sideBarDigitalGarden(),
-      '/Learning-Guides/': sideBarNotesandGuides(),
+      '/Notes-and-Guides/': sideBarNotesandGuides(),
       '/Projects/': sideBarProjects()
     },
 
