@@ -79,7 +79,6 @@ function sideBarNotesandGuides() {
   return [
     {
       text: 'Technology',
-      collapsed: true,
       link: '/Notes-and-Guides/Technology/',
       items: [
         {
@@ -103,7 +102,6 @@ function sideBarNotesandGuides() {
     },
     {
       text: 'Productivity',
-      collapsed: true,
       link: '/Notes-and-Guides/Productivity/'
     }
   ]
