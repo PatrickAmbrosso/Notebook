@@ -1,15 +1,20 @@
 ---
-title: 
-tags: Category/Engineering-and-Technology 
+# Basic Metadata
 description: "Up and running with PowerShell"
-# Site Configurations
+tags: 
+# Publisher Metadata
 share: true
-sidebar_position: 1
-# Dataview Fetch Fields
-content_type: MOC
-content_topics:
- - Sys-Admin
- - Automation
+# Site UI Overrides
+aside: true
+# Site Navigation
+prev: 
+  text: 'Programming and Scripting'
+  link: '/Notes-and-Guides/Technology/Programming-and-Scripting/'
+next:
+  text: 
+  link: false
+# Dataview Query Fields
+content-type: 
 ---
 ## Overview
 
