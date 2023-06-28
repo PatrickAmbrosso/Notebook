@@ -1,8 +1,4 @@
-/*
-* Custom Theme Overrides
-* Author: Patrick Ambrose
-* Theme Name: Purple Paradise
-*/
+/* Custom Theme Overrides */ 
 
 /* Custom Color Palette */
 :root {
@@ -513,7 +509,7 @@ em {
     }
 }
 
-/* -------------------- Custom Styling -------------------- */
+/* -------------------- Custom Components -------------------- */
 
 /* Custom Stlye */
 .custom-layout {

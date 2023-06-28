@@ -33,7 +33,7 @@ export default defineConfig({
     // Custom Sidebar Configuration
     sidebar: {
       '/Digital-Garden/': sideBarDigitalGarden(),
-      '/Learning-Guides/': sideBarLearningGuides(),
+      '/Learning-Guides/': sideBarNotesandGuides(),
       '/Projects/': sideBarProjects()
     },
 
@@ -58,7 +58,7 @@ function navBar() {
   return [
     { text: 'About Me', link: '/About' },
     { text: 'Digital Garden', link: '/Digital-Garden/' },
-    { text: 'Learning Guides', link: '/Learning-Guides/' },
+    { text: 'Notes & Guides', link: '/Notes-and-Guides/' },
     { text: 'Projects', link: '/Projects/' },
     { text: 'Contact Me', link: '/Contact' }
   ]
@@ -98,50 +98,36 @@ function sideBarDigitalGarden() {
   ]
 }
 
-function sideBarLearningGuides() {
+function sideBarNotesandGuides() {
   return [
     {
-      text: 'Roadmaps',
+      text: 'Technology',
+      collapsed: true,
+      link: '/Notes-and-Guides/Technology/',
       items: [
         {
-          text: 'Career Roadmaps',
+          text: 'Programming and Scripting',
           collapsed: true,
-          link: '/learning-paths/career-roadmaps',
+          link: '/Notes-and-Guides/Technology/Programming-and-Scripting/',
           items: [
-            { text: 'DevOps Engineer', link: '/learning-paths/devops-engineer' },
-            { text: 'Cloud Engineer', link: '/learning-paths/cloud-engineer' },
+            { text: 'PowerShell', link: '/Notes-and-Guides/Technology/Programming-and-Scripting/PowerShell/' },
+            { text: 'Python', link: '/Notes-and-Guides/Technology/Programming-and-Scripting/Python/' },
           ]
         },
         {
-          text: 'Technology Roadmaps',
+          text: 'Networking',
           collapsed: true,
-          link: '/learning-paths/career-roadmaps',
+          link: '/Notes-and-Guides/Technology/Networking/',
           items: [
-            { text: 'Computer Networking', link: '/learning-paths/devops-engineer' },
-            { text: 'Hardware and Infrastructure', link: '/learning-paths/hardware-and-infrastructure' },
-            { text: 'Operating Systems and Software', link: '/learning-paths/cloud-engineer' },
-          ]
-        },
-        {
-          text: 'Tool-based Roadmaps',
-          collapsed: true,
-          link: '/learning-paths/career-roadmaps',
-          items: [
-            { text: 'Docker', link: '/learning-paths/devops-engineer' },
-            { text: 'Hardware and Infrastructure', link: '/learning-paths/hardware-and-infrastructure' },
-            { text: 'Operating Systems and Software', link: '/learning-paths/cloud-engineer' },
+            { text: 'SSH', link: '/Notes-and-Guides/Technology/Networking/SSH' }
           ]
         }
       ]
     },
     {
-      text: 'Guides',
-      collapsed: true,
-      items: [
-        { text: 'AWS', link: '/learning-paths/AWS-Guides' },
-        { text: 'Portainer', link: '/learning-paths/Portainer-Guides' },
-        { text: 'Kubernetes', link: '/learning-paths/Kubernetes-Guides' }
-      ]
+      text: 'Productivity',
+      collapsed: false,
+      link: '/Notes-and-Guides/Productivity/'
     }
   ]
 }
