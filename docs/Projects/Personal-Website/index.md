@@ -11,8 +11,8 @@ prev:
   text: 
   link: false
 next:
-  text: 
-  link: false
+  text: Personal Website
+  link: '/Projects/Personal-Website/'
 # Dataview Query Fields
 content-type: 
 ---
