@@ -103,9 +103,9 @@ function sideBarNotesandGuides() {
 function sideBarProjects() {
   return [
     {
-      text: 'Portfolio Website',
+      text: 'Personal Website',
       collapsed: true,
-      link: '/Projects/Portfolio-Website/',
+      link: '/Projects/Personal-Website/',
       items: [
         { text: 'Vitepress Site', link: '/Projects/Personal-Website/VitePress' }
       ]
