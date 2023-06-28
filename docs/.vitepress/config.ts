@@ -62,7 +62,7 @@ function navBar() {
     { text: 'Digital Garden', link: '/Digital-Garden/' },
     { text: 'Notes & Guides', link: '/Notes-and-Guides/' },
     { text: 'Projects', link: '/Projects/' },
-    { text: 'Contact Me', link: '/Contact' }
+    { text: 'Get in Touch', link: '/Contact' }
   ]
 }
 
@@ -70,33 +70,8 @@ function navBar() {
 
 function sideBarDigitalGarden() {
   return [
-    {
-      text: 'Welcome', link: '/Digital-Garden/'
-    },
-    {
-      text: 'Science and Technology',
-      collapsed: true,
-      link: '/digital-garden/science-and-technology',
-      items: [
-        {
-          text: 'Cloud and DevOps',
-          items: [
-            { text: 'Web Servers', link: '/web-servers' },
-            { text: 'Monitoring and Logging', link: '/markdown-examples' },
-            { text: 'Arts and Humanities', link: '/markdown-examples' },              
-          ]
-        },
-        {
-          text: 'Remote Server Management',
-          link: '/digital-garden/Remote-Server-Management',
-          items: [
-            { text: 'SSH', link: '/digital-garden/SSH' },
-            { text: 'RDP', link: '/digital-garden/RDP' },
-            { text: 'VCS', link: '/digital-garden/Version-Control-System' },              
-          ]
-        },
-      ]
-    }
+    { text: 'Welcome to the Garden', link: '/Digital-Garden/' }, 
+    { text: 'Tools I Use', link: '/Digital-Garden/' }
   ]
 }
 
@@ -128,7 +103,7 @@ function sideBarNotesandGuides() {
     },
     {
       text: 'Productivity',
-      collapsed: false,
+      collapsed: true,
       link: '/Notes-and-Guides/Productivity/'
     }
   ]
@@ -141,30 +116,18 @@ function sideBarProjects() {
       collapsed: true,
       link: '/projects/portfolio-website',
       items: [
-        { text: 'Setting up VitePress', link: '/learning-paths/devops-engineer' },
+        { text: 'Vitepress Site', link: '/Projects/Personal-Website/VitePress' },
         { text: 'Customizations', link: '/learning-paths/cloud-engineer' },
-        { text: 'Authoring Content', link: '/learning-paths/cloud-engineer' },
-        { text: 'Deployment', link: '/learning-paths/cloud-engineer' }
       ]
     },
     {
       text: 'Home Lab',
       collapsed: true,
-      link: '/projects/home-lab',
+      link: '/projects/HomeLab',
       items: [
-        { text: 'Computer Networking', link: '/learning-paths/devops-engineer' },
-        { text: 'Hardware and Infrastructure', link: '/learning-paths/hardware-and-infrastructure' },
-        { text: 'Operating Systems and Software', link: '/learning-paths/cloud-engineer' },
-      ]
-    },
-    {
-      text: 'PowerShell AWS CLI Tool',
-      collapsed: true,
-      link: '/projects/pwsh-aws-cli-tool',
-      items: [
-        { text: 'Computer Networking', link: '/learning-paths/devops-engineer' },
-        { text: 'Hardware and Infrastructure', link: '/learning-paths/hardware-and-infrastructure' },
-        { text: 'Operating Systems and Software', link: '/learning-paths/cloud-engineer' },
+        { text: 'Getting Started', link: '/Projects/HomeLab/Getting-Started' },
+        { text: 'Purchasing Equipment', link: '/Projects/HomeLab/Purchasing-Equipment' },
+        { text: 'Configuring Stacks', link: '/Projects/HomeLab/Configuring-Stacks' },
       ]
     }
   ]
