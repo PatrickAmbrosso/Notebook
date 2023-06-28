@@ -71,7 +71,7 @@ function navBar() {
 function sideBarDigitalGarden() {
   return [
     { text: 'Welcome to the Garden', link: '/Digital-Garden/' }, 
-    { text: 'Tools I Use', link: '/Digital-Garden/' }
+    { text: 'Tools I Use', link: '/Digital-Garden/Tools-I-Use' }
   ]
 }
 
@@ -116,8 +116,7 @@ function sideBarProjects() {
       collapsed: true,
       link: '/projects/portfolio-website',
       items: [
-        { text: 'Vitepress Site', link: '/Projects/Personal-Website/VitePress' },
-        { text: 'Customizations', link: '/learning-paths/cloud-engineer' },
+        { text: 'Vitepress Site', link: '/Projects/Personal-Website/VitePress' }
       ]
     },
     {
