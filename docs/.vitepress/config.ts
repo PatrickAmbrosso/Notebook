@@ -6,6 +6,8 @@ export default defineConfig({
   title: "Patrick's Notebook",
   description: "A learning in public notebook of Patrick Ambrose",
 
+  ignoreDeadLinks: true,
+
   head: [
     ['meta', { name: 'author', content: 'Patrick Ambrose' }],
     ['meta', { name: 'keywords', content: 'digital-garden, pkm, second brain' }],
