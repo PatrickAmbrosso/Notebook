@@ -51,11 +51,10 @@ export default defineConfig({
 
 function navBar() {
   return [
-    { text: 'About Me', link: '/About' },
     { text: 'Digital Garden', link: '/Digital-Garden/' },
     { text: 'Notes & Guides', link: '/Notes-and-Guides/' },
     { text: 'Projects', link: '/Projects/' },
-    { text: 'Get in Touch', link: '/Contact' }
+    { text: 'About Me', link: '/About' }
   ]
 }
 

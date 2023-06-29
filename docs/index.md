@@ -12,24 +12,24 @@ hero:
   actions:
     - theme: brand
       text: Start Exploring
-      link: /digital-garden/
+      link: /Digital-Garden/
     - theme: alt
       text: About Me
-      link: /about-me
+      link: /About
 
 features:
   - icon: 🌱
     title: Digital Garden
     details: Explore the growing digital garden and see where it takes you this time.
-    link: /digital-garden/
+    link: /Digital-Garden/
   - icon: 📖
-    title: Learning Paths
+    title: Notes & Guides
     details: Check out the learning paths that take to learn new practices, technologies and ideologies
-    link: /learning-paths/
+    link: /Notes-and-Guides/
   - icon: 👨🏾‍💻
     title: Projects
     details: Check out the projects that I have been busy with these days.
-    link: /projects/
+    link: /Projects/
 ---
 
 <!-- Custom home layout -->

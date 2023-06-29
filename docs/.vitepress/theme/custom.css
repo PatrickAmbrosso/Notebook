@@ -471,18 +471,18 @@ em {
 
 /* Hero Tag line size change */
 
-.text[data-v-d7d9b248],
+/* .text[data-v-d7d9b248],
 .text[data-v-d5e18f35] {
-    line-height: 64px;
+    line-height: 56px;
     font-size: 40px;
-}
+} */
 
 /* Local: [data-v-d7d9b248] */
 /* Build: [data-v-d5e18f35] */
 
 /* Hero Image Resize - Media Queries */
 
-@media (min-width: 350px) {
+/* @media (min-width: 350px) {
 
     [data-v-d7d9b248] .image-src,
     [data-v-d5e18f35] .image-src {
@@ -507,9 +507,55 @@ em {
         max-width: 400px;
         max-height: 400px;
     }
-}
+} */
 
 /* -------------------- Custom Components -------------------- */
+
+/* About Page, Cert Section */
+.certifications {
+    margin: 20px;
+    max-width: 1152px;
+    color: var(--vp-c-text-1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 1rem;
+    min-height: 400px;
+    margin: 6rem auto 0;
+}
+
+.cert-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cert-card {
+  width: 45%;
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cert-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cert-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.cert-card p {
+  margin-top: 5px;
+  font-size: 14px;
+}
 
 /* Custom Stlye */
 .custom-layout {
