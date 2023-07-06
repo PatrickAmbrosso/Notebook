@@ -9,7 +9,7 @@ aside: true
 # Site Navigation
 prev: 
   text: 'Programming and Scripting'
-  link: '/Notes-and-Guides/Technology/Programming-and-Scripting/'
+  link: '/Notes-and-Guides/Technology/Programming-and-Scripting/' 
 next:
   text: 
   link: false
@@ -191,16 +191,14 @@ REMARKS
 
 ---
 ## Getting Comfortable
-
 1. [PowerShell Basics](./PowerShell-Basics.md#)
 2. [PowerShell Control Flow](PowerShell%20Control%20Flow.md#)
 3. [PowerShell Error Handling](PowerShell%20Error%20Handling.md#)
-4. [PowerShell Functions](PowerShell%20Functions.md#)
+4. [PowerShell Functions](../../../../../PowerShell%20Functions.md#)
 5. [PowerShell Modules](PowerShell%20Modules.md#)
 
 ---
 ## Showcase
-
 1. [Customizing the PowerShell Prompt](Customizing%20the%20PowerShell%20Prompt.md#)
 2. [PowerShell Showcase - Working with Objects](PowerShell%20Showcase%20-%20Working%20with%20Objects.md#)
 3. [PowerShell Showcase - Working with Output](PowerShell%20Showcase%20-%20Working%20with%20Output.md#)
@@ -227,12 +225,12 @@ REMARKS
 9. [Spiceworks PowerShell Forum](https://community.spiceworks.com/programming/powershell)
 
 ### Books
-1. **PowerShell for SysAdmins** by **Adam Bertram** | [No Starch Press](https://nostarch.com/powershellsysadmins)
-2. **Learn PowerShell in a Month of Lunches** by **Travis Plunk**, **James Petty**, **Tyler Leonhardt**, **Don Jones** and **Jeffery Hicks** | [Manning](https://www.manning.com/books/learn-powershell-in-a-month-of-lunches) | [Amazon](https://www.amazon.com/Learn-PowerShell-Month-Lunches-Fourth-ebook/dp/B09XBTPJ3S)
-3. **Mastering PowerShell Scripting** by **Chris Dent** | [Packt](https://www.packtpub.com/product/mastering-powershell-scripting-fourth-edition/9781800206540) | [Amazon](https://www.amazon.com/Mastering-PowerShell-Scripting-Automate-environment/dp/1800206542)
-4. **PowerShell Cookbook** by **Lee Holmes** | [O'Reilly](https://www.oreilly.com/library/view/powershell-cookbook-4th/9781098101596/)
-5. **PowerShell Pocket Reference** by **Lee Holmes** | [O'Reilly](https://www.oreilly.com/library/view/powershell-pocket-reference/9781098101664/)
-6. **PowerShell 7 for IT Professionals** by **Thomas Lee** | [Wiley](https://www.wiley.com/en-us/PowerShell+7+for+IT+Professionals-p-9781119644705) | [Amazon](https://www.amazon.com/PowerShell-7-Pros-Thomas-Lee/dp/1119644720/ref=sr_1_1?crid=2I42JJMSY2NXM&keywords=PowerShell+7+for+IT+Professionals)
+1. *PowerShell for SysAdmins* by **Adam Bertram** | [No Starch Press](https://nostarch.com/powershellsysadmins)
+2. *Learn PowerShell in a Month of Lunches* by **Travis Plunk**, **James Petty**, **Tyler Leonhardt**, **Don Jones** and **Jeffery Hicks** | [Manning](https://www.manning.com/books/learn-powershell-in-a-month-of-lunches) | [Amazon](https://www.amazon.com/Learn-PowerShell-Month-Lunches-Fourth-ebook/dp/B09XBTPJ3S)
+3. *Mastering PowerShell Scripting* by **Chris Dent** | [Packt](https://www.packtpub.com/product/mastering-powershell-scripting-fourth-edition/9781800206540) | [Amazon](https://www.amazon.com/Mastering-PowerShell-Scripting-Automate-environment/dp/1800206542)
+4. *PowerShell Cookbook* by **Lee Holmes** | [O'Reilly](https://www.oreilly.com/library/view/powershell-cookbook-4th/9781098101596/)
+5. *PowerShell Pocket Reference* by **Lee Holmes** | [O'Reilly](https://www.oreilly.com/library/view/powershell-pocket-reference/9781098101664/)
+6. *PowerShell 7 for IT Professionals* by **Thomas Lee** | [Wiley](https://www.wiley.com/en-us/PowerShell+7+for+IT+Professionals-p-9781119644705) | [Amazon](https://www.amazon.com/PowerShell-7-Pros-Thomas-Lee/dp/1119644720/ref=sr_1_1?crid=2I42JJMSY2NXM&keywords=PowerShell+7+for+IT+Professionals)
 
 ### YouTube Video Tutorials
 
@@ -240,4 +238,3 @@ REMARKS
 ### Miscellaneous Resources
 1. [PowerShell Digital Art](https://learn.microsoft.com/en-us/powershell/scripting/community/digital-art)
 
----
