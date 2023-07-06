@@ -30,7 +30,6 @@ export default defineConfig({
 
     // Custom Sidebar Configuration
     sidebar: {
-      '/Digital-Garden/': sideBarDigitalGarden(),
       '/Notes-and-Guides/': sideBarNotesandGuides(),
       '/Projects/': sideBarProjects()
     },
@@ -51,7 +50,6 @@ export default defineConfig({
 
 function navBar() {
   return [
-    { text: 'Digital Garden', link: '/Digital-Garden/' },
     { text: 'Notes & Guides', link: '/Notes-and-Guides/' },
     { text: 'Projects', link: '/Projects/' },
     { text: 'About Me', link: '/About' }
@@ -59,13 +57,6 @@ function navBar() {
 }
 
 // Side Bar Configurations
-
-function sideBarDigitalGarden() {
-  return [
-    { text: 'Welcome to the Garden', link: '/Digital-Garden/' }, 
-    { text: 'Tools I Use', link: '/Digital-Garden/Tools-I-Use' }
-  ]
-}
 
 function sideBarNotesandGuides() {
   return [
