@@ -47,7 +47,6 @@ export default defineConfig({
 })
 
 // Navigation Bar Configuration
-
 function navBar() {
   return [
     { text: 'Notes & Guides', link: '/Notes-and-Guides/' },
@@ -57,7 +56,6 @@ function navBar() {
 }
 
 // Side Bar Configurations
-
 function sideBarNotesandGuides() {
   return [
     {
