@@ -17,18 +17,66 @@ next:
 content-type: 
 ---
 # Secure Shell (SSH)
-**Secure Shell (SSH - pronounced ESS-ESS-HEICH)**, is a cryptographic network protocol that allows secure remote access and secure file transfer between networked computers. It provides a secure and encrypted channel over an unsecured network, ensuring the confidentiality and integrity of data transmitted between the client and the server.
+**SSH (pronounced ESS-ESS-HEICH)** stands for **Secure Shell**. It is a *cryptographic network protocol* that provides a *secure* and *encrypted* way to *access and manage remote devices* over an unsecured network, such as the internet. SSH allows users to securely log into remote systems and execute commands, transfer files, and perform other network services.
 
-## The basics of SSH
+The primary purpose of SSH is to establish a secure and authenticated connection between a client and a server. It provides *confidentiality*, *integrity*, and *authenticity* of data transmitted between the client and server through strong encryption and cryptographic techniques.
+
+Here are some *key features and characteristics* of the SSH protocol
+1. **Encryption** - SSH encrypts all communication between the client and server, ensuring that sensitive data, including login credentials, commands, and file transfers, cannot be intercepted or read by unauthorized parties.
+2. **Authentication** - SSH provides various methods of authentication, including passwords, public-key cryptography, and two-factor authentication. These mechanisms verify the identity of the user and protect against unauthorized access.
+3. **Secure Remote Access** - SSH allows users to remotely access and control systems or devices from anywhere, providing a secure alternative to protocols like Telnet or Rlogin, which transmit data in plain text.
+4. **Secure File Transfer** - SSH includes file transfer capabilities, such as the SFTP (SSH File Transfer Protocol) and SCP (Secure Copy) protocols, which enable secure and encrypted file transfers between the client and server.
+5. **Port Forwarding** - SSH supports port forwarding, allowing users to create secure tunnels to transmit network traffic between local and remote hosts. This feature is useful for accessing services securely or bypassing network restrictions.
+6. **Platform Compatibility** - SSH is available on various operating systems, including Linux, Unix, macOS, and Windows via implementations of the protocol.
+
+**OpenSSH** is an *open-source implementation of the SSH protocol* suite. It provides both the *server-side (sshd)* and *client-side (ssh)* components, offering secure remote login, encrypted file transfers, and secure tunneling capabilities. OpenSSH is the *most widely used* and commonly recommended implementation of SSH due to its security, reliability, and extensive feature set.
+OpenSSH is actively maintained and developed by a team of dedicated contributors. [Its source code is open and available for inspection](https://github.com/openssh), which allows for community involvement, code audits, and continuous improvement.
+Due to its security, flexibility, and wide adoption, OpenSSH has become the de facto standard for SSH implementations in many environments. It is extensively used by system administrators, network engineers, developers, and security-conscious individuals for secure remote administration and file transfer tasks.
+
+::: tip
+To clarify once again, OpenSSH is the open-source implementation of the SSH protocol. OpenSSH offers a robust and extensive feature set that aligns with the SSH protocol's capabilities.
+:::
+
+## Section 1: The Fundamentals of SSH
+This section deals with the basics of the SSH Protocol, and specifically the OpenSSH implementation. Topics such as the history of SSH & OpenSSH, the components of an SSH environment and more.
+
+::: info
+This guide uses SSH and OpenSSH interchangeably, as OpenSSH is the most widely used implementation of the SSH protocol, with its presence in almost all Unix-based operating systems and even on Windows.
+:::
+
+### History of SSH and OpenSSH
+In the early days of networked computing, protocols like Telnet and rlogin were commonly used for remote access to systems. However, these protocols transmitted data, including passwords, in plaintext, making them vulnerable to eavesdropping and unauthorized access.
+
+In *1995*, *Tatu Ylönen*, a *Finnish researcher*, developed the Secure Shell (SSH) protocol as a secure *alternative to Telnet and rlogin*. His goal was to create a secure method for remote login and encrypted communication between networked devices. Ylönen initially released the SSH protocol as a proprietary software solution. However, realizing the importance of open standards and collaboration, he encouraged the development of an open-source version.
+
+In *1999*, *OpenSSH* was born as an *open-source implementation of the SSH protocol suite*. It was derived from the original SSH implementation, which was freely available but not open source. The OpenSSH project was started by developers associated with the *OpenBSD operating system*. They aimed to create an open-source implementation of SSH that emphasized security, code auditability, and robustness. Over the years, OpenSSH has evolved to include various features beyond the core SSH functionality. This includes support for *encrypted file transfers (SFTP and SCP)*, *port forwarding*, *X11 forwarding*, and more. The project has received contributions from developers worldwide, allowing for ongoing improvements and bug fixes.
+
+OpenSSH gained widespread adoption due to its *security*, *reliability*, and *cross-platform compatibility*. It became the default SSH implementation in many Unix-like operating systems, including Linux, FreeBSD, and macOS. It is now considered the *de facto standard for SSH*. OpenSSH has a strong focus on security and actively addresses vulnerabilities through regular updates and patches. The OpenSSH team maintains a coordinated process to promptly respond to security issues and release secure updates to the software.
+
+### The Architecture of SSH
+The SSH protocol serves as the underlying communication protocol for secure remote access and other services provided by SSH. It defines the format and structure of messages exchanged between the SSH client and server during the connection process. The SSH protocol includes mechanisms for encryption, authentication, and integrity checks to ensure secure and reliable communication. The protocol supports different versions, such as SSH1 and SSH2, with SSH2 being the more secure and widely used version today.
+
+The SSH architecture is composed of two main components
+1. **SSH Server**
+    - The SSH server is responsible for hosting the services and resources that clients can connect to securely. It runs on the remote machine that you want to access.
+    - When a client initiates an SSH connection, the SSH server handles the authentication, encryption, and session management on the server-side.
+    - The SSH server listens for incoming SSH connections on a specific port (default is port 22) and establishes secure communication channels with the client.
+    - Examples of SSH server software include OpenSSH, Microsoft OpenSSH, and Bitvise SSH Server.
+2. **SSH Client**
+    - The SSH client is the software or tool used to initiate a connection to an SSH server. It runs on the local machine from which the remote server is accessed.
+    - The SSH client provides the interface for users to authenticate, securely transmit commands and data, and interact with the remote server.
+    - When a client initiates an SSH connection, it establishes a secure communication channel with the server, authenticates the user, and manages the encrypted session.
+    - Examples of SSH client software include OpenSSH (ssh command-line tool), PuTTY, and Bitvise SSH Client.
 
 ### How does SSH work?
-SSH is a protocol that enables secure remote access to computers over an insecure network. It establishes an encrypted connection between the client and server, protecting sensitive information from eavesdropping and manipulation. Following are some of the steps that SSH takes to perform ths secure connection between a client and a server.
+Here is a quick rundown of a typical SSH workflow.
 1. When a client initiates an SSH connection to a server, they perform a handshake to establish a secure connection using cryptographic algorithms. The client and server exchange keys, verify each other's identity, and negotiate encryption algorithms for secure communication.
 2. Once the connection is established, the client can securely authenticate using either a password or an SSH key. The server verifies the client's credentials, and upon successful authentication, grants access to the remote shell or executes remote commands on the server.
 3. Throughout the session, all data transmitted between the client and server is encrypted, providing confidentiality and integrity. SSH also supports additional features like port forwarding, allowing secure access to services running on the server via the encrypted SSH tunnel.
 
 SSH was developed as a secure alternative to earlier remote login protocols like Telnet, which transmitted data in plain text, making it vulnerable to interception and unauthorized access. With SSH, *all communication is encrypted*, preventing eavesdropping and protecting sensitive information such as usernames, passwords, and commands.
 
+---
 ### Key Features and Benefits of SSH
 1.  **Secure Communication** - SSH uses strong encryption algorithms to secure data transmission, protecting it from unauthorized access and tampering.
 2.  **Authentication** - SSH supports various authentication methods, including password-based authentication and public key authentication. Public key authentication offers a higher level of security and convenience, eliminating the need to enter passwords for each login.
@@ -36,13 +84,13 @@ SSH was developed as a secure alternative to earlier remote login protocols like
 4.  **Secure File Transfer** - In addition to remote access, SSH provides secure file transfer capabilities through protocols like SCP (Secure Copy) and SFTP (SSH File Transfer Protocol).
 5.  **Tunneling and Port Forwarding** - SSH allows you to create secure tunnels and forward ports, enabling you to securely access services running on remote servers as if they were local.
 
-### SSH Components
+### SSH Components and Terminology
 SSH has three components that make a successful SSH connection work.
 1. **SSH Client** - The client initiates a connection to the SSH server and provides the user interface for interacting with the remote system.
 2. **SSH Server** - The server runs on the remote system and handles incoming SSH connections from clients. It authenticates users and provides access to the system.
 3. **SSH Protocol** - The SSH protocol defines the rules and formats for secure communication between the client and the server. It specifies the encryption algorithms, authentication methods, and other parameters.
 
-## SSH Architecture and Components
+### SSH Architecture and Components
 Understanding the architecture and components of SSH helps in comprehending how SSH connections are established, authenticated, and secured. It forms the basis for configuring and managing SSH connections, key pairs, and authentication methods.
 1. **SSH Client** - The SSH client is the software or tool used by the user to initiate a secure connection to the remote server. It allows the user to authenticate themselves and interact with the server. Common SSH clients include OpenSSH (command-line tool), PuTTY (Windows-based client), and Bitvise SSH Client.
 2. **SSH Server** - The SSH server is the software running on the remote system that accepts incoming SSH connections from clients. It authenticates users and provides access to the server's resources. OpenSSH is the most widely used SSH server implementation.
@@ -51,7 +99,7 @@ Understanding the architecture and components of SSH helps in comprehending how 
 5. **Authentication Methods** - SSH supports *multiple authentication methods* to verify the identity of users connecting to the server. These methods include *password-based authentication*, *public key authentication*, *certificate-based authentication*, and more. Public key authentication is commonly used for its enhanced security and convenience.
 6. **SSH Keys** - SSH keys play a crucial role in the SSH architecture. A key pair consists of a private key stored on the client-side and a corresponding public key stored on the server-side. Public key authentication involves the client presenting its public key to the server for authentication, proving its identity without transmitting a password over the network.
 
-## Key Concepts: Public Key Cryptography and Authentication
+### Key Concepts: Public Key Cryptography and Authentication
 Understanding public key cryptography and authentication is crucial for securely authenticating users and establishing encrypted connections in SSH. It enables secure and efficient remote access, file transfers, and automation tasks.
 1. **Public Key Cryptography** - Public key cryptography, also known as asymmetric cryptography, is a fundamental concept in SSH. It involves the use of a key pair: a public key and a private key. The public key is freely distributed, while the private key remains secret and known only to the owner.
 2. **Key Pair Generation** - To use public key cryptography in SSH, a key pair must be generated. The private key is generated on the client-side, and the corresponding public key is derived from it. Various algorithms such as RSA or DSA are used for key pair generation.
@@ -60,7 +108,8 @@ Understanding public key cryptography and authentication is crucial for securely
 5. **Key-Based Authentication** - Key-based authentication relies on the private key remaining secure on the client-side. It eliminates the need for passwords, enhancing security and convenience. However, it is crucial to protect the private key with strong passphrase-based encryption and follow secure key management practices.
 6. **Host Key** - In addition to user authentication, SSH also employs host keys for server identification. When a client connects to a server for the first time, the server's host key is presented and stored on the client-side. In subsequent connections, the client verifies the server's identity by checking the stored host key.
 
-## SSH Configuration Files and Options
+## SSH Client and Server Setup
+# ## SSH Configuration Files and Options
 1. **SSH Client Configuration File** - The SSH client uses a configuration file typically located at "~/.ssh/config" (on Unix-like systems) or "%USERPROFILE%\.ssh\config" (on Windows systems). This file allows you to define custom settings for SSH connections.
 2. **SSH Server Configuration File** - The SSH server also has a configuration file, commonly located at "/etc/ssh/sshd_config" (on Unix-like systems). This file allows you to configure various server-side settings and behavior.
 3. **Client-side Configuration Options** - In the client configuration file, you can set options such as the default username, preferred authentication methods, preferred cipher and MAC algorithms, connection timeouts, and port forwarding settings. These options help customize the client's behavior when establishing SSH connections.
