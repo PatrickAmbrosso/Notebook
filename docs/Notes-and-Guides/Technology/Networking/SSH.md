@@ -70,27 +70,129 @@ The SSH architecture is composed of two main components
 
 ### How does SSH work?
 Here is a quick rundown of a typical SSH workflow.
-1. When a client initiates an SSH connection to a server, they perform a handshake to establish a secure connection using cryptographic algorithms. The client and server exchange keys, verify each other's identity, and negotiate encryption algorithms for secure communication.
-2. Once the connection is established, the client can securely authenticate using either a password or an SSH key. The server verifies the client's credentials, and upon successful authentication, grants access to the remote shell or executes remote commands on the server.
-3. Throughout the session, all data transmitted between the client and server is encrypted, providing confidentiality and integrity. SSH also supports additional features like port forwarding, allowing secure access to services running on the server via the encrypted SSH tunnel.
+1. **Connection Initiation** - When a client initiates an SSH connection to a server, they perform a handshake to establish a secure connection using cryptographic algorithms. The client and server exchange keys, verify each other's identity, and negotiate encryption algorithms for secure communication.
+2. **Authentication** - Once the connection is established, the client can securely authenticate using either a password or an SSH key. The server verifies the client's credentials, and upon successful authentication, grants access to the remote shell or executes remote commands on the server.
+3. **Encrypted Communication** - Throughout the session, all data transmitted between the client and server is encrypted, providing confidentiality and integrity. SSH also supports additional features like port forwarding, allowing secure access to services running on the server via the encrypted SSH tunnel.
 
 SSH was developed as a secure alternative to earlier remote login protocols like Telnet, which transmitted data in plain text, making it vulnerable to interception and unauthorized access. With SSH, *all communication is encrypted*, preventing eavesdropping and protecting sensitive information such as usernames, passwords, and commands.
 
+## Section 2: Setting Up SSH
+This section deals with setting up an SSH client and server and running a secure connection between them.
+
+### Installation of SSH Client and Server
+The installation process for SSH client and server software varies depending on the operating system being used. Here's a general overview of the installation steps for SSH client and server:
+1. **SSH Client Installation**
+    - Determine the SSH client software to be installed. Popular options include *OpenSSH (command-line tool)*, *PuTTY (Windows GUI client)*, and *Bitvise SSH Client (Windows GUI client)*.
+    - Visit the official website or trusted sources for the chosen SSH client software.
+    - Download the installer package appropriate for the chosen operating system.
+    - Run the installer package and follow the on-screen instructions.
+    - Once the installation is complete, the SSH client should be ready to use.
+2. **SSH Server Installation**
+    - Determine the SSH server software to be installed. The most widely used SSH server implementation is *OpenSSH*.
+    - OpenSSH is *often included as a default* component in many Linux and Unix-like operating systems. However, if it is not already installed, you can typically install it through the package manager of the chosen operating system.
+    - For Linux distributions, such as Ubuntu, Debian, or CentOS, use the package manager (e.g., apt, yum) to install the OpenSSH server package.
+    - On Windows, OpenSSH Server can be installed through the Windows PowerShell or by using the OpenSSH installer provided by Microsoft.
+    - During the installation process, options to configure the SSH port, authentication methods, and other security-related options are presented to the user and can be customized.
+    - Once the installation is complete, the SSH server should be ready to accept incoming SSH connections.
+
+It's important to note that specific instructions and package names may vary depending on the chosen operating system and distribution. It's recommended to consult the official documentation or resources specific to the chosen SSH client or server software for detailed installation instructions. Additionally, some operating systems may have pre-installed SSH client or server software, while others may require manual installation.
+
+### SSH Authentication Methods
+The following are some of the authentication methods used with SSH
+1. **Password-based Authentication**
+    - Users provide their *username* and *password* to authenticate themselves.
+    - The server verifies the provided credentials against a stored user database (e.g., /etc/passwd, LDAP, or Active Directory).
+    - Password-based authentication is a common method but may be less secure compared to other methods, especially if weak or easily guessable passwords are used.
+2. **Public Key-based Authentication**
+    - Public key authentication uses asymmetric key pairs, meaning a *public key* and a *corresponding private key*.
+    - The *user generates a key pair* on their local machine and *stores the public key on the remote server*.
+    - During authentication, the client proves its identity by presenting its private key, and the server verifies it using the stored public key.
+    - Public key-based authentication is *highly secure and recommended for SSH*. It eliminates the need to transmit passwords over the network and protects against password-based attacks.
+    - This is the *most common type of authentication* used with SSH.
+3. **Keyboard-Interactive Authentication**
+    - Keyboard-interactive authentication is a *flexible and customizable authentication method*.
+    - It can prompt users for various types of credentials, such as passwords, one-time passwords, or challenge-response questions.
+    - This method allows for *multiple rounds of interaction* between the client and server during the authentication process.
+    - Keyboard-interactive authentication can be used as a *fallback method* when other authentication methods fail or are unavailable.
+4. **Certificate-based Authentication**
+    - Certificate-based authentication uses *digital certificates issued by a trusted Certificate Authority (CA)*.
+    - Similar to public key-based authentication, the user presents a client certificate instead of a private key.
+    - The server verifies the authenticity of the certificate by checking its validity and the CA's signature.
+    - Certificate-based authentication provides an extra layer of trust, as the CA validates the user's identity.
+5. **Two-factor Authentication (2FA)**
+    - Two-factor authentication combines multiple authentication factors to enhance security.
+    - It typically involves *combining something the user knows* (e.g., a password) with *something the user has* (e.g., a mobile device or hardware token).
+    - SSH servers can be configured to require both a password and a second factor, such as a one-time password generated by a mobile app or hardware token.
+
+SSH allows for configuring and enforcing authentication methods based on security requirements and user preferences. The choice of authentication method depends on the level of security desired, ease of use, and available infrastructure. Public key-based authentication is generally recommended for its strong security properties, while additional methods like two-factor authentication can provide extra layers of protection.
+
+#### Password-based Authentication 
+The `ssh` command can be used to connect to the remote server. The command follows the general syntax as showcased below.
+
+```bash
+# Syntax
+ssh username@server_ip
+
+# Example 
+ssh root@178.231.67.39
+```
+
+Upon execution of this command, the client requests an SSH connection to the user at the requested IP address. The server then waits for the user to enter the password to connect to the server. Upon reception of the verified password, the client and server are connected via SSH and the client can execute commands on the server via SSH. 
+
+This method is however not recommended as the integrity of this method depends on the efficient management of the password by the user, plus it also open up for password compromises and brute force attacks. 
+
+#### Public Key-Based Authentication
+Public Key-based authentication uses an asymmetric key-pair to authenticate the user making the remote connection. There are a few steps involved in setting up a key-pair based authentication. The general process is outlined below.
+1. **Key-pair Generation** - A key-pair is generated on the client machine using the `ssh-keygen` command. There are several encryption algorithms that can be used to generate key-pairs each with their pros, cons and legacy. There is an option to set a key-phrase for accessing the key-pair, and it is recommended to set it up as it adds an additional layer of authentication on top of the SSH key.   
+2. **Copy Public Key to Server** - The public key part of the key-pair is then transferred to the server. But the private key remains on the client and is kept safe.
+3. **Client Initiates SSH Connection** - The SSH client initiates a connection to the SSH server using the `ssh` command. The client presents its private key to the server for authentication.  
+4. Server Verifies Public Key - The server (`sshd`) checks the client's public key against the authorized keys file for the user that the client is requesting access to. If a matching public key is found, the server accepts the connection and authenticates the client. If the key does not match or is not present, the server denies access.
+5. **Authenticated Session Established** - Once the server verifies the client's public key, an authenticated session is established. The client can interact securely with the server using SSH commands or transfer files securely.
+
+Following code snippet showcases the commonly used encryption algorithms used to generate a key-pair.
+
+```bash
+# RSA
+ssh-keygen -t rsa -b 2048
+
+# DSA
+ssh-keygen -t dsa -b 2048
+
+# ECDSA
+ssh-keygen -t ecdsa -b 256
+
+# ED25519
+ssh-keygen -t ed25519
+```
+
+The following table summarizes the different encryption algorithms.
+
+| Encryption Algorithm                                   | Description                                                                                                                                                                                                                                                                |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **RSA** (Rivest-Shamir-Adleman)                        | RSA is a *widely used* asymmetric encryption algorithm. It offers *strong security and good performance*. RSA key pairs are compatible with almost all SSH clients and servers.                                                                                            |
+| **DSA** (Digital Signature Algorithm)                  | DSA is an *older asymmetric encryption algorithm*. It provides *strong security* but may have *slower performance* compared to RSA. DSA key pairs are compatible with most SSH clients and servers, but some implementations have *deprecated or limited support* for DSA. |
+| **ECDSA** (Elliptic Curve Digital Signature Algorithm) | ECDSA is an asymmetric encryption algorithm based on *elliptic curve cryptography*. It offers *strong security* with *shorter key lengths*, resulting in *improved performance*. ECDSA key pairs are supported by many modern SSH implementations.                         |
+| **Ed25519**                                            | Ed25519 is a newer asymmetric encryption algorithm based on *elliptic curve cryptography*. It provides *strong security*, *excellent performance*, and *smaller key sizes* compared to RSA and DSA. Ed25519 key pairs are supported by many modern SSH implementations.    |
+
+After generating the key-pair, the key pair needs to be moved to the SSH server. This task can be accomplished by a number of ways. 
+
+1. **Using `ssh-copy-id` command**
+    - The `ssh-copy-id` command simplifies the process of copying the public key to the server.  
+    - This command copies the public key to the remote server and adds it to the `authorized_keys` file in the user's home directory.
+2. Manual Copying:
+    - If the `ssh-copy-id` command is not available or not suitable for your system, you can manually copy the public key to the server.
+    - On the client machine, use a text editor or command-line tools to open the public key file (`~/.ssh/id_rsa.pub`, `~/.ssh/id_dsa.pub`, `~/.ssh/id_ecdsa.pub`, or `~/.ssh/id_ed25519.pub`).
+    - Copy the contents of the public key file.
+    - On the server, open the `~/.ssh/authorized_keys` file (create it if it doesn't exist) in a text editor.
+    - Paste the copied public key into a new line in the `authorized_keys` file and save it.
+3. Secure File Transfer:
+    - Use a secure file transfer method, such as SCP or SFTP, to transfer the public key file to the server.
+    - Example using SCP:
+        `scp ~/.ssh/id_rsa.pub username@server_ip:~/.ssh/authorized_keys`
+    - This command copies the public key file directly to the `authorized_keys` file on the server.
+
 ---
-### Key Features and Benefits of SSH
-1.  **Secure Communication** - SSH uses strong encryption algorithms to secure data transmission, protecting it from unauthorized access and tampering.
-2.  **Authentication** - SSH supports various authentication methods, including password-based authentication and public key authentication. Public key authentication offers a higher level of security and convenience, eliminating the need to enter passwords for each login.
-3.  **Portability** - SSH is widely supported across different operating systems, making it easy to establish secure connections between heterogeneous systems.
-4.  **Secure File Transfer** - In addition to remote access, SSH provides secure file transfer capabilities through protocols like SCP (Secure Copy) and SFTP (SSH File Transfer Protocol).
-5.  **Tunneling and Port Forwarding** - SSH allows you to create secure tunnels and forward ports, enabling you to securely access services running on remote servers as if they were local.
-
-### SSH Components and Terminology
-SSH has three components that make a successful SSH connection work.
-1. **SSH Client** - The client initiates a connection to the SSH server and provides the user interface for interacting with the remote system.
-2. **SSH Server** - The server runs on the remote system and handles incoming SSH connections from clients. It authenticates users and provides access to the system.
-3. **SSH Protocol** - The SSH protocol defines the rules and formats for secure communication between the client and the server. It specifies the encryption algorithms, authentication methods, and other parameters.
-
-### SSH Architecture and Components
+SSH Architecture and Components
 Understanding the architecture and components of SSH helps in comprehending how SSH connections are established, authenticated, and secured. It forms the basis for configuring and managing SSH connections, key pairs, and authentication methods.
 1. **SSH Client** - The SSH client is the software or tool used by the user to initiate a secure connection to the remote server. It allows the user to authenticate themselves and interact with the server. Common SSH clients include OpenSSH (command-line tool), PuTTY (Windows-based client), and Bitvise SSH Client.
 2. **SSH Server** - The SSH server is the software running on the remote system that accepts incoming SSH connections from clients. It authenticates users and provides access to the server's resources. OpenSSH is the most widely used SSH server implementation.
@@ -99,7 +201,7 @@ Understanding the architecture and components of SSH helps in comprehending how 
 5. **Authentication Methods** - SSH supports *multiple authentication methods* to verify the identity of users connecting to the server. These methods include *password-based authentication*, *public key authentication*, *certificate-based authentication*, and more. Public key authentication is commonly used for its enhanced security and convenience.
 6. **SSH Keys** - SSH keys play a crucial role in the SSH architecture. A key pair consists of a private key stored on the client-side and a corresponding public key stored on the server-side. Public key authentication involves the client presenting its public key to the server for authentication, proving its identity without transmitting a password over the network.
 
-### Key Concepts: Public Key Cryptography and Authentication
+Key Concepts: Public Key Cryptography and Authentication
 Understanding public key cryptography and authentication is crucial for securely authenticating users and establishing encrypted connections in SSH. It enables secure and efficient remote access, file transfers, and automation tasks.
 1. **Public Key Cryptography** - Public key cryptography, also known as asymmetric cryptography, is a fundamental concept in SSH. It involves the use of a key pair: a public key and a private key. The public key is freely distributed, while the private key remains secret and known only to the owner.
 2. **Key Pair Generation** - To use public key cryptography in SSH, a key pair must be generated. The private key is generated on the client-side, and the corresponding public key is derived from it. Various algorithms such as RSA or DSA are used for key pair generation.
@@ -109,7 +211,7 @@ Understanding public key cryptography and authentication is crucial for securely
 6. **Host Key** - In addition to user authentication, SSH also employs host keys for server identification. When a client connects to a server for the first time, the server's host key is presented and stored on the client-side. In subsequent connections, the client verifies the server's identity by checking the stored host key.
 
 ## SSH Client and Server Setup
-# ## SSH Configuration Files and Options
+### SSH Configuration Files and Options
 1. **SSH Client Configuration File** - The SSH client uses a configuration file typically located at "~/.ssh/config" (on Unix-like systems) or "%USERPROFILE%\.ssh\config" (on Windows systems). This file allows you to define custom settings for SSH connections.
 2. **SSH Server Configuration File** - The SSH server also has a configuration file, commonly located at "/etc/ssh/sshd_config" (on Unix-like systems). This file allows you to configure various server-side settings and behavior.
 3. **Client-side Configuration Options** - In the client configuration file, you can set options such as the default username, preferred authentication methods, preferred cipher and MAC algorithms, connection timeouts, and port forwarding settings. These options help customize the client's behavior when establishing SSH connections.
