@@ -35,7 +35,7 @@ jobs:
       - name: setup pnpm
         uses: pnpm/action-setup@v2 # Uncomment this if you're using pnpm
         with: 
-          pnpm-version: '8.6.0'
+          version: '8.6.0'
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
