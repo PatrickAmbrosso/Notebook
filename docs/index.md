@@ -15,7 +15,7 @@ hero:
       link: /Digital-Garden/
     - theme: alt
       text: About Me
-      link: /About
+      link: /about
 
 features:
   - icon: 📖

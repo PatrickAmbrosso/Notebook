@@ -6,10 +6,18 @@ hero:
   name: "Hello There!"
   text: "It's me, Patrick Ambrose"
   tagline: Here's my attempt at getting you up to speed about me...
-  image:
-    src: "/public/patrick.png"
-    alr: Hero Image
 ---
+<div class="custom-layout">
+  
+  ## Section 1: Summary
+
+  ## Section 2: Work and Career
+
+  ## Section 3: Certifications
+
+  ## Section 4: Contact
+
+</div>
 
 <!-- <section class="certifications">
   <h2>Certifications</h2>

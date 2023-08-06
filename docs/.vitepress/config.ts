@@ -51,7 +51,7 @@ function navBar() {
   return [
     { text: 'Notes & Guides', link: '/Notes-and-Guides/' },
     { text: 'Projects', link: '/Projects/' },
-    { text: 'About Me', link: '/About' }
+    { text: 'About Me', link: '/about' }
   ]
 }
 
