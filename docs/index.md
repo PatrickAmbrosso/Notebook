@@ -31,5 +31,5 @@ features:
 <!-- Custom home layout -->
 <div class="custom-layout">
   <h1>⚠️ Caution, Work in Progress</h1>
-  <p>This passion project is under construction, so it might have some rough edges here and there <em>(okay, a lot of rough edges)</em>. I will be addressing them and adding fixes to them as the project matures. Soon, I will have a way for you to submit suggestions to me, if that interests you!</p>
+  <p>This passion project is under construction, so it might have some rough edges here and there <em>(okay, a lot of rough edges)</em>. I will be addressing them and adding fixes to them as the project matures. Soon, it will have a way for you to submit suggestions to me, if that interests you!</p>
 </div>
