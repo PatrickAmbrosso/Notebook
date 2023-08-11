@@ -8,7 +8,7 @@ export default defineConfig({
   head: [
     ['meta', { name: 'author', content: 'Patrick Ambrose' }],
     ['meta', { name: 'keywords', content: 'digital-garden, pkm, second brain' }],
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -49,9 +49,11 @@ export default defineConfig({
 // Navigation Bar Configuration
 function navBar() {
   return [
-    { text: 'Notes & Guides', link: '/Notes-and-Guides/' },
-    { text: 'Projects', link: '/Projects/' },
-    { text: 'About Me', link: '/about' }
+    { text: 'Catalogs', link: '/Notes-and-Guides/' },
+    { text: 'Charts', link: '/Projects/' },
+    { text: 'Critiques', link: '/Projects/' },
+    { text: 'Creations', link: '/Projects/' }
+    // { text: 'About Me', link: '/about' }
   ]
 }
 

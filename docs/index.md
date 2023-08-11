@@ -1,32 +1,62 @@
 ---
-title: Home
+title: Homepage
 layout: home
 
 hero:
   name: "Patrick's Notebook"
-  text: "Portfolio, Docs and More"
-  tagline: Welcome to my digital Notebook. This is a collection of my personal notes, technical documentation and other guides or study materials. 
+  text: "Notes and Thoughts"
+  tagline: Hey this is Patrick Ambrose and welcome to my digital notebook. This is a platform to share the things that I learn and come across.
   image:
-    src: hero-img.png
-    alt: Demo-Logo
+    src: brain-book.png
+    alt: hero-image
   actions:
     - theme: brand
-      text: Explore the Notes
-      link: /Digital-Garden/
+      text: Explore the Notebook
+      link: "/Notes-and-Guides/"
     - theme: alt
-      text: About Me
-      link: /about
+      text: More about me
+      link: "https://bento.me/patrickambrosso"
 
 features:
-  - icon: 📖
-    title: Notes & Guides
-    details: Check out the learning paths that take to learn new practices, technologies and ideologies
+  - icon: 🧠
+    title: Catalog
+    details: Things I llearn and come across
     link: /Notes-and-Guides/
+  - icon: 🗺️
+    title: Charts
+    details: Step-by-step detailed learning roadmaps
+    link: /Projects/
+  - icon: 🔥
+    title: Critiques
+    details: A deep dive into things I consume
+    link: /Projects/
   - icon: 👨🏾‍💻
-    title: Projects
-    details: Check out the projects that I have been busy with these days.
+    title: Creations
+    details: Things that keep me occupied and entertained
     link: /Projects/
 ---
+
+<style>
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #A459D1 40%, #9575DE);
+
+  --vp-home-hero-image-background-image: linear-gradient(-62deg, #9376E0 50%, #bd4f5c 50%);
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(100px);
+  }
+}
+</style>
 
 <!-- Custom home layout -->
 <div class="custom-layout">
