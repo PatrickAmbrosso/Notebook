@@ -499,11 +499,12 @@
 /* Text Decoration - Modifications */
 
 strong {
-    color: var(--vp-c-brand-light)
+    color: var(--vp-c-brand-light);
 }
 
 em {
-    color: var(--vp-c-green)
+    color: var(--vp-c-green);
+    font-weight: 700;
 }
 
 /* h2 {

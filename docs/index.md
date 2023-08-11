@@ -36,28 +36,6 @@ features:
     link: /Projects/
 ---
 
-<style>
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #A459D1 40%, #feca57);
-
-  --vp-home-hero-image-background-image: linear-gradient(-62deg, #9376E0 50%, #bd4f5c 50%);
-  --vp-home-hero-image-filter: blur(40px);
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(100px);
-  }
-}
-</style>
-
 <!-- Custom home layout -->
 <div class="custom-layout">
   <h1>⚠️ Caution, Work in Progress</h1>
