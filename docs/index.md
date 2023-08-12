@@ -25,7 +25,7 @@ features:
   - icon: 📝
     title: Notebook
     details: A deep dive into things I consume.
-    link: /Projects/
+    link: /Projects
   - icon: 🔥
     title: Projects
     details: Things I am actively working on.
