@@ -596,11 +596,20 @@ em {
 }
 
 .index-section .btn {
-    background-color: var(--vp-button-brand-bg);
     color: var(--vp-button-brand-text);
     border-radius: 20px;
     padding: 0.5rem 1.4rem;
     margin: 0 1rem 0 0;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.index-section .btn.brand {
+    background-color: var(--vp-button-brand-bg);
+}
+
+.index-section .btn.brand:hover {
+    background-color: var(--vp-button-brand-hover-bg);
 }
 
 /* Responsive adjustments */
