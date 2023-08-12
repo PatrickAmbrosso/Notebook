@@ -599,11 +599,32 @@ em {
     font-size: 14px;
 }
 
+.index-section {
+    /* background-color: var(--vp-c-bg-soft); */
+    color: var(--vp-c-text-1);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+    gap: 1.75rem;
+    min-height: 400px;
+    max-width: var(--vp-layout-max-width);
+    margin: 6rem auto 0;
+    border-radius: 10px;
+}
+
+.index-section h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
 /* Custom Stlye */
 .custom-layout {
     background-color: var(--vp-c-bg-soft);
     color: var(--vp-c-text-1);
-    padding: 1.5rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -611,9 +632,21 @@ em {
     text-align: center;
     gap: 1rem;
     min-height: 400px;
-    max-width: 1152px;
+    max-width: var(--vp-layout-max-width);
     margin: 6rem auto 0;
     border-radius: 10px;
+}
+
+@media (min-width: 320px) {
+    .custom-layout {
+        max-width: 88%;
+    }
+}
+
+@media (min-width: 1220px) {
+    .custom-layout {
+        max-width: var(--vp-layout-max-width);
+    }
 }
 
 .custom-layout h1 {

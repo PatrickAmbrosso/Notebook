@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Patrick's Notebook",
-  description: "A learning in public notebook of Patrick Ambrose",
+  title: "Patrick's Portfolio",
+  description: "Portfolio and Digital Notebook of Patrick Ambrose",
   ignoreDeadLinks: true,
   head: [
     ['meta', { name: 'author', content: 'Patrick Ambrose' }],
@@ -15,7 +15,7 @@ export default defineConfig({
 
     // Site Metadata
     logo: '/logo.png',
-    siteTitle: 'Patrick\'s Notebook',
+    siteTitle: 'The Patfolio',
 
     outline: [2,4],
     outlineTitle: 'Content Outline',
@@ -49,11 +49,8 @@ export default defineConfig({
 // Navigation Bar Configuration
 function navBar() {
   return [
-    { text: 'Catalogs', link: '/Notes-and-Guides/' },
-    { text: 'Charts', link: '/Projects/' },
-    { text: 'Critiques', link: '/Projects/' },
-    { text: 'Creations', link: '/Projects/' }
-    // { text: 'About Me', link: '/about' }
+    { text: 'Notebook', link: '/Notebook' },
+    { text: 'Projects', link: '/Projects' }
   ]
 }
 
