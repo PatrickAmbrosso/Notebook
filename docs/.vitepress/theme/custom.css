@@ -553,112 +553,67 @@ em {
 
 /* -------------------- Custom Components -------------------- */
 
-/* About Page, Cert Section */
-.certifications {
-    margin: 20px;
-    max-width: 1152px;
-    color: var(--vp-c-text-1);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    gap: 1rem;
-    min-height: 400px;
-    margin: 6rem auto 0;
-}
-
-.cert-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.cert-card {
-    width: 45%;
-    background-color: var(--vp-c-bg-soft);
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.cert-card img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.cert-card h3 {
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-.cert-card p {
-    margin-top: 5px;
-    font-size: 14px;
-}
-
 .index-section {
-    /* background-color: var(--vp-c-bg-soft); */
+    /* background-color: var(--vp-c-bg-soft);
+    border-radius: 10px; */
     color: var(--vp-c-text-1);
-    padding: 3rem;
+    padding: 4rem 1.75rem;
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
     text-align: left;
-    gap: 1.75rem;
-    min-height: 400px;
-    max-width: var(--vp-layout-max-width);
-    margin: 6rem auto 0;
+    gap: 2rem;
+    min-height: auto;
+    margin: 2rem auto 0;
+}
+
+@media (max-width: 1200px) {
+
+    /* For screens 1440px and below */
+    .index-section {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1201px) {
+
+    /* For screens above 1440px */
+    .index-section {
+        width: 1150px;
+    }
+}
+
+.index-section.elevated {
+    background-color: var(--vp-c-bg-soft);
     border-radius: 10px;
 }
 
 .index-section h2 {
     font-size: 2.2rem;
     font-weight: 600;
+    color: var(--cus-clr-purple-primary)
 }
 
-/* Custom Stlye */
-.custom-layout {
-    background-color: var(--vp-c-bg-soft);
-    color: var(--vp-c-text-1);
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 1rem;
-    min-height: 400px;
-    max-width: var(--vp-layout-max-width);
-    margin: 6rem auto 0;
-    border-radius: 10px;
-}
-
-@media (min-width: 320px) {
-    .custom-layout {
-        max-width: 88%;
-    }
-}
-
-@media (min-width: 1220px) {
-    .custom-layout {
-        max-width: var(--vp-layout-max-width);
-    }
-}
-
-.custom-layout h1 {
-    font-size: 2.2rem;
-    font-weight: 600;
-}
-
-.custom-layout .btn {
+.index-section .btn {
     background-color: var(--vp-button-brand-bg);
     color: var(--vp-button-brand-text);
     border-radius: 20px;
     padding: 0.5rem 1.4rem;
+    margin: 0 1rem 0 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        /* Stacking items on mobile */
+    }
+
+    .image,
+    .introduction {
+        flex: initial;
+    }
 }
 
 /* Video Embeds */
