@@ -14,17 +14,17 @@ features:
   - icon: 🖥️
     title: HomeLab
     details: All about managing & learning from running servers at home.
-    link: /Notes-and-Guides/
+    link: /Projects/HomeLab
   - icon: 😎
     title: Personal Website
     details: A step by step walkthrough for the Patfolio - Portfolio website
-    link: /Projects/
+    link: /Projects/Personal-Website
   - icon: 🗺️
     title: PWSSH
     details: PowerShell SSH TUI written with the charm.sh gum library
-    link: /Projects/
+    link: /Projects/PWSSH
   - icon: 📊
     title: PSTop
     details: PowerShell implementation of the Linux htop command
-    link: /Projects/
+    link: /Projects/PSTop
 ---
