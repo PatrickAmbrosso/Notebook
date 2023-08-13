@@ -14,9 +14,9 @@ features:
   - icon: 🎬
     title: HomeLab Guides
     details: Talking about the movies that I happen to watch and how they made me feel/think
-    link: /Roadmaps/HomeLab/
+    link: /Roadmaps/HomeLab-Guides/
   - icon: ♾️
     title: DevOps Guides
     details: Its like Development and Operations together, really interesting, you gotta see it
-    link: /Roadmaps/DevOps/
+    link: /Roadmaps/DevOps-Guides/
 ---
