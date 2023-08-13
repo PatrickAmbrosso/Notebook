@@ -49,10 +49,10 @@ export default defineConfig({
 // Navigation Bar Configuration
 function navBar() {
   return [
-    { text: 'Notebook', link: '/Notebook' },
+    { text: 'Notes', link: '/Notes' },
     { text: 'Projects', link: '/Projects' },
-    { text: 'Resume', link: 'https://www.patrickambrose.com/resume-2023.pdf' },
-    { text: 'Get in Touch', link: 'mailto:hey@patrickambrose.com' }
+    { text: 'Roadmaps', link: '/Roadmaps' },
+    { text: 'Resume', link: 'https://www.patrickambrose.com/resume-2023.pdf' }
   ]
 }
 

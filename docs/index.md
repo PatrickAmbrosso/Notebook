@@ -14,8 +14,8 @@ hero:
       text: Know more about me
       link: "#"
     - theme: alt
-      text: Explore my Digital Notebook
-      link: "/Notebook"
+      text: Get in Touch
+      link: "mailto:hey@patrickambrose.com"
 
 features:
   - icon: 😎
@@ -23,9 +23,13 @@ features:
     details: Let's get you up to speed about me.
     link: /#
   - icon: 📝
-    title: Notebook
+    title: Notes
     details: A deep dive into things I consume.
-    link: /Notebook
+    link: /Notes
+  - icon: 🗺️
+    title: Roadmaps
+    details: A deep dive into things I consume.
+    link: /Roadmaps
   - icon: 🔥
     title: Projects
     details: Things I am actively working on.
