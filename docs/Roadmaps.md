@@ -8,7 +8,7 @@ hero:
   tagline: Step-by-Step Guides to My Ongoing Quests and Discoveries
   image:
     src: hero-roadmap.png
-    alt: hero-image
+    alt: roadmap-image
 
 features:
   - icon: 👨🏽‍🔬
