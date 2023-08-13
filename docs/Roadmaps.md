@@ -11,7 +11,7 @@ hero:
     alt: hero-image
 
 features:
-  - icon: 🎬
+  - icon: 👨🏽‍🔬
     title: HomeLab Guides
     details: Talking about the movies that I happen to watch and how they made me feel/think
     link: /Roadmaps/HomeLab-Guides/
