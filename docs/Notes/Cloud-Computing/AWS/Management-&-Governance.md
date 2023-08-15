@@ -7,6 +7,8 @@ share: true
 # Site UI Overrides
 aside: true
 # Dataview Query Fields
-content-type: 
+content-type: catalogue
 content-tags:
+  - AWS-Products-and-Services
+  - Category
 ---
