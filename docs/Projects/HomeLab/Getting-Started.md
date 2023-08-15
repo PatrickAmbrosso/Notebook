@@ -9,10 +9,10 @@ aside: true
 # Site Navigation
 prev: 
   text: 'HomeLab'
-  link: '/Projects/HomeLab/'
+  link: '../HomeLab/'
 next:
   text: 'Purchasing Equipment'
-  link: '/Projects/HomeLab/Purchasing-Equipment'
+  link: './Purchasing-Equipment'
 # Dataview Query Fields
 content-type: 
 ---
