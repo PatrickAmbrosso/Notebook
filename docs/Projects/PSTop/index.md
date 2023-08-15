@@ -16,4 +16,3 @@ next:
 # Dataview Query Fields
 content-type: 
 ---
-`>>== this.file.name`
