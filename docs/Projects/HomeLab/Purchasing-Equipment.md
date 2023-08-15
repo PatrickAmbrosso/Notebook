@@ -6,13 +6,7 @@ tags:
 share: true
 # Site UI Overrides
 aside: true
-# Site Navigation
-prev: 
-  text: 'Getting Started'
-  link: './Getting-Started'
-next:
-  text: 'Configuring Stacks'
-  link: './Configuring-Stacks'
 # Dataview Query Fields
 content-type: 
+content-tags:
 ---
