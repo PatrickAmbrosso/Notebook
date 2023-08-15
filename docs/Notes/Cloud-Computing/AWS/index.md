@@ -10,6 +10,9 @@ aside: true
 content-type: MOC
 content-tags:
   - Cloud-Service-Provider
+footer: false
+lastUpdated: true
+editLink: true
 ---
 ## Amazon Web Services
 **Amazon Web Services** is a broad set of global services that offers cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools on-demand, available in seconds and in a pay-as-you-go basis. AWS was *launched in 2006* and is currently the leading [Cloud Service Provider](Cloud%20Service%20Provider.md#).

@@ -5,6 +5,7 @@ export default defineConfig({
   title: "Patrick's Portfolio",
   description: "Portfolio and Digital Notebook of Patrick Ambrose",
   ignoreDeadLinks: true,
+  lastUpdated: true,
   head: [
     ['meta', { name: 'author', content: 'Patrick Ambrose' }],
     ['meta', { name: 'keywords', content: 'digital-garden, pkm, second brain' }],
@@ -53,7 +54,26 @@ function navBar() {
     { text: 'Notes', link: '/Notes' },
     { text: 'Projects', link: '/Projects' },
     { text: 'Roadmaps', link: '/Roadmaps' },
-    { text: 'Resume', link: 'https://www.patrickambrose.com/resume-2023.pdf' }
+    {
+      text: 'More About Me',
+      items: [
+        {
+          // Title for the section.
+          // text: 'Title', Optional Title
+          items: [
+            { text: 'About Me', link: '/About-Me' },
+            { text: 'Latest Updates?', link: 'https://bento.me/patrickambrosso' }
+          ]
+        },
+        {
+          // Title for the section.
+          // text: 'Title', Optional Title
+          items: [
+            { text: 'My Resumé', link: 'https://www.patrickambrose.com/resume-2023.pdf' }
+          ]
+        }
+      ]
+    }
   ]
 }
 
