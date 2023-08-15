@@ -11,8 +11,8 @@ prev:
   text: 
   link: false
 next:
-  text: 'HomeLab'
-  link: '/Projects/HomeLab/Getting-Started'
+  text: 'Getting Started'
+  link: './Getting-Started'
 # Dataview Query Fields
 content-type: 
 ---
