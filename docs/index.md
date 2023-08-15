@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Know more about me
-      link: "#"
+      link: "/About-Me"
     - theme: alt
       text: Get in Touch
       link: "mailto:hey@patrickambrose.com"
@@ -41,10 +41,4 @@ features:
   <p>
     Here, you can expect a curated collection of my professional journey. From my hands-on experiences as an Operations Engineer with a DevOps mindset working in a pharmaceutical company to my tinkering escapades in the HomeLab and ventures in design, this platform offers a glimpse into my diverse world. Explore insightful articles, practical tech insights, and perhaps a sprinkle of design inspiration. Whether you're a fellow tech enthusiast, a design aficionado, or simply someone curious about my endeavors, I hope to provide a little something for everyone here. So, join me on my voyage as we navigate through the realms of technology, design, and beyond.
   </p>
-</div>
-
-<div class="index-section elevated">
-    <h2>Who am I?</h2>
-    <p>As you might have already come across multiple times, I am Patrick Ambrose, a DevOps Engineer on a mission – from mastering system administration to embracing the pulse of modern software practices.</p>
-    <p><em>My commitment?</em><br> Weaving efficiency through processes, accelerating <strong>time-to-market</strong>, and <strong>fortifying production landscapes</strong> for unwavering <strong>stability</strong> and <strong>scalability</strong>. Always on the lookout for DevOps tasks that lets me fuse <strong>continuous integration</strong>, <strong>infrastructure automation</strong>, <strong>containerization</strong>, and <strong>vigilant monitoring</strong> to ignite productivity and redefine excellence.</p>
 </div>
