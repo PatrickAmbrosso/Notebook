@@ -14,7 +14,7 @@ hero:
       text: Know more about me
       link: "/About-Me"
     - theme: alt
-      text: Get in Touch
+      text: Let's Connect?
       link: "mailto:hey@patrickambrose.com"
 
 features:
