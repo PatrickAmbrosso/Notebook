@@ -11,10 +11,14 @@ hero:
     alt: hero-image
 
 features:
+  - icon: ⚙️
+    title: Software Engineering
+    details: Learning the proper etiquette to communicate with the computer 
+    link: /Notes/Software-Engineering/
   - icon: 🧑🏽‍💻
     title: Programming
     details: Talking to the computers and asking them to do things (nicely of course)
-    link: /Notes/Computer-Programming/
+    link: /Notes/Programming-Languages/
   - icon: 🖥️
     title: Hardware
     details: Building the computers and a capable infrastructure around it

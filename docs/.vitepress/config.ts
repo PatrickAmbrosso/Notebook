@@ -98,14 +98,23 @@ function sideBarNotes() {
       ]
     },
     {
+      text: 'Software Engineering',
+      collapsed: true,
+      link: '/Notes/Software-Engineering/',
+      items: [
+        { text: 'Basic Concepts', link: '/Notes/Programming-Languages/Basic-Concepts/' },
+        { text: 'Design Patterns', link: '/Notes/Programming-Languages/Design-Patterns/' }
+      ]
+    },
+    {
       text: 'Programming',
       collapsed: true,
-      link: '/Notes/Computer-Programming/',
+      link: '/Notes/Programming-Languages/',
       items: [
-        { text: 'Python', link: '/Notes/Computer-Programming/Python/' },
-        { text: 'PowerShell', link: '/Notes/Computer-Programming/PowerShell/' },
-        { text: 'GoLang', link: '/Notes/Computer-Programming/GoLang/' },
-        { text: 'C#', link: '/Notes/Computer-Programming/C-Sharp/' }
+        { text: 'Python', link: '/Notes/Programming-Languages/Python/' },
+        { text: 'PowerShell', link: '/Notes/Programming-Languages/PowerShell/' },
+        { text: 'GoLang', link: '/Notes/Programming-Languages/GoLang/' },
+        { text: 'C#', link: '/Notes/Programming-Languages/C-Sharp/' }
       ]
     },
     {
