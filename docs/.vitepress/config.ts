@@ -135,8 +135,9 @@ function sideBarNotes() {
       collapsed: true,
       link: '/Notes/DevOps-Engineering/',
       items: [
-        { text: 'Basics of DevOps', link: '/Notes/DevOps-Engineering/Basics' },
-        { text: 'DevOps Phases', link: '/Notes/DevOps-Engineering/Phases' }
+        { text: 'Fundamentals', link: '/Notes/DevOps-Engineering/Basics' },
+        { text: 'Infrastructure as Code', link: '/Notes/DevOps-Engineering/Infrastructure-as-Code/'}
+        { text: 'Monitoring & Logging', link: '/Notes/DevOps-Engineering/Monitoring-and-Logging/'}
       ]
     },
     {
