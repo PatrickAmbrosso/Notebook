@@ -384,15 +384,11 @@ print(10 < 9)
 
 #### Binary Types 
 1. Bytes
-	- 
+	- Bytes
 2. Byte Array
-	- 
+	- Byte Array
 3. Memory View
-	- 
-
-```python
-
-```
+	- Memory View
 
 #### None Type
 None or Null are absence of values where an empty string (`""`) or a zero (`0`) as a value cannot be substituted.
@@ -501,10 +497,311 @@ Bitwise operators are used to compare binary numbers.
 | <<       | Zero Fill Left Shift | Shift left by pushing zeros in from the right and let the leftmost bits fall off                        |
 | >>       | Signed Right Shift   | Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off |
 
+### Flow Control and Loops
+Flow controls and loops are crucial part of any programming language. They facilitate to logically process a piece of information and take actions based on the outcome.
+**Flow statements** are used to control the flow of code execution based on a logical test. If the test case passes, a specific block of code is executed, and if it fails, another action can be triggered.
+Loops are used to iterate over a condition multiple times, based on a condition. These form the foundation of repeatability and consistency when performing operations with code, as the same code is iterated over multiple times.
+
+::: info
+> [!abstract] Pass, Break and Continue 
+> The `pass` statement can be used to skip a block from getting executed. This is done as conditional blocks cannot be empty (without any code).
+> 
+> The `break` keyword can be used to exit a block of code prematurely without evaluating it. It can be used to exit out of the loop.
+> 
+> The `continue` keyword can be used to skip to the next iteration of the loop while ending the current iteration.
+:::
+
+::: warning
+> [!caution] Premature exits and else blocks
+> When a loop is exited using a `break` statement, the else block will not be executed.
+:::
+
+#### If-elif-else Flow Control Statement
+The is, else and elif statement is used to check for conditions and perform code executions. The order of execution is very important when dealing with the `if-elif-else` statements. The code is executed from top to bottom and the if condition checking process ends when the python finds the first `True` condition. The remaining conditions are not evaluated. It is also possible to chain multiple logical tests using the logical operators in python. The if conditions can also be nested, to check conditions within conditions. 
+
+```python
+# if-elif-else flow control statement
+computer_value = 10
+user_input = int(input("Enter a number from 1 to 10"))
+if(computer_value = user_input ):
+	print("the player guessed right")
+elif(computer_value < user_input):
+	print("User guessed a larger number")
+else:
+	print("User guessed a smaller number")
+
+# Simple one-condition if statement 
+a = 10
+b = 20
+if(a=b): print("a equals to b")
+
+# Simple one-condition if-else condition
+a = 10
+b = 20
+print("a equals to b") if(a=b) else print("a and b are not equal")
+
+# Evaluating numtiple conditions 
+a = 5
+b = 10
+c = 20
+if (a < b) and (a < c):
+	print("a is the smallest number")
+elif (a == 0) or (b == 0) or (c == 0):
+	print("One entry among a,b,c is a zero")
+elif not (a == c ):
+	print("a and c are non-identical")
+else:
+	print("All conditions have failed")
+
+# Nested if-elif-else statements
+a = 10
+b = 20
+c = 5	
+if a > b:
+	if c > a:
+		print("c is the largest")
+else:
+	print("a is not greater")
+
+# Skipping a block using the pass statement
+a = 10
+b = 20
+if a > b:
+	pass
+``` 
+
+#### While Loop
+A while loop is used to iterate over a block of code as long as the condition evaluates to true.
+
+The `else` statement can be used to evaluate a block of code when the condition for a while loop evaluates to a false.
+
+```python
+# Simple while loop to evaluate a conditions 
+a = 10
+while(a>0):
+	print("The value of a is" + str(a))
+	a = a - 1
+
+# Using break to exit the loop
+a = 10
+while(a>0):
+	if(a == 4): break
+	print("The value of a is" + str(a))
+	a = a - 1
+
+# Using continue to skip current iteration
+a = 10
+while(a>0):
+	if(a == 4): continue
+	print("The value of a is" + str(a))
+	a = a - 1
+
+# Using else to run a block of code when the condition evaluates to false
+a = 10
+while(a>0):
+	print("The value of a is" + str(a))
+	a = a - 1
+else:
+	print("The Loop has ended")
+```
+
+#### For Loop
+For loops are used to iterate over a block of code a set number of times. This loop is chosen when the number of times the looping has to be done is known.
+Several ways can be used to supply the looping entity to the for loop. For loop is most often used over collection data types such as lists, sets, tuples and dictionaries.
+
+```python
+# Looping through a list 
+my_list = ["apple", "oranges", "pineapples"]
+for list_item in my_str:
+	print(list_item )
+
+# Looping through a string 
+string = "Hello World"
+for each_char in string:
+	print(each_char)
+
+# Looping through with range function
+for i in range(5):
+	print(i) # prints from 0 to 4 (5 times)
+
+for i in range(2,5):
+	print(i) # prints 2,3,4 (3 values: 5-2=3)
+
+for i in range(2,11,2):
+	print(i) # prints 2,4,6,8,10 (steps of 2)
+```
+
+The range function supplies values from the start till, but not including the end number, in whatever increment required. It can also take in negative numbers for the incrementing number argument.
+
+### Methods
+Methods are actions that can be performed to existing objects such as lists, strings, numbers and so on. Each object supports a variety of specific methods. 
+
+#### String Methods 
+
+| Method         | Description                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------|
+| `capitalize()`   | Converts the first character to upper case                                                    |
+| `casefold()`     | Converts string into lower case                                                               |
+| `center()`       | Returns a centered string                                                                     |
+| `count()`        | Returns the number of times a specified value occurs in a string                              |
+| `encode()`       | Returns an encoded version of the string                                                      |
+| `endswith()`     | Returns true if the string ends with the specified value                                      |
+| `expandtabs()`   | Sets the tab size of the string                                                               |
+| `find()`         | Searches the string for a specified value and returns the position of where it was found      |
+| `format()`       | Formats specified values in a string                                                          |
+| `format_map()`   | Formats specified values in a string                                                          |
+| `index()`        | Searches the string for a specified value and returns the position of where it was found      |
+| `isalnum()`      | Returns True if all characters in the string are alphanumeric                                 |
+| `isalpha()`      | Returns True if all characters in the string are in the alphabet                              |
+| `isdecimal()`    | Returns True if all characters in the string are decimals                                     |
+| `isdigit()`      | Returns True if all characters in the string are digits                                       |
+| `isidentifier()` | Returns True if the string is an identifier                                                   |
+| `islower()`      | Returns True if all characters in the string are lower case                                   |
+| `isnumeric()`    | Returns True if all characters in the string are numeric                                      |
+| `isprintable()`  | Returns True if all characters in the string are printable                                    |
+| `isspace()`      | Returns True if all characters in the string are whitespaces                                  |
+| `istitle()`      | Returns True if the string follows the rules of a title                                       |
+| `isupper()`      | Returns True if all characters in the string are upper case                                   |
+| `join()`         | Joins the elements of an iterable to the end of the string                                    |
+| `ljust()`        | Returns a left justified version of the string                                                |
+| `lower()`        | Converts a string into lower case                                                             |
+| `lstrip()`       | Returns a left trim version of the string                                                     |
+| `maketrans()`    | Returns a translation table to be used in translations                                        |
+| `partition()`    | Returns a tuple where the string is parted into three parts                                   |
+| `replace()`      | Returns a string where a specified value is replaced with a specified value                   |
+| `rfind()`        | Searches the string for a specified value and returns the last position of where it was found |
+| `rindex()`       | Searches the string for a specified value and returns the last position of where it was found |
+| `rjust()`        | Returns a right justified version of the string                                               |
+| `rpartition()`   | Returns a tuple where the string is parted into three parts                                   |
+| `rsplit()`       | Splits the string at the specified separator, and returns a list                              |
+| `rstrip()`       | Returns a right trim version of the string                                                    |
+| `split()`        | Splits the string at the specified separator, and returns a list                              |
+| `splitlines()`   | Splits the string at line breaks and returns a list                                           |
+| `startswith()`   | Returns true if the string starts with the specified value                                    |
+| `strip()`        | Returns a trimmed version of the string                                                       |
+| `swapcase()`     | Swaps cases, lower case becomes upper case and vice versa                                     |
+| `title()`        | Converts the first character of each word to upper case                                       |
+| `translate()`    | Returns a translated string                                                                   |
+| `upper()`        | Converts a string into upper case                                                             |
+| `zfill()`        | Fills the string with a specified number of 0 values at the beginning                         |
+
+#### List Methods 
+
+| Method    | Description                                                                  |
+|-----------|------------------------------------------------------------------------------|
+| `append()`  | Adds an element at the end of the list                                       |
+| `clear()`   | Removes all the elements from the list                                       |
+| `copy()`    | Returns a copy of the list                                                   |
+| `count()`   | Returns the number of elements with the specified value                      |
+| `extend()`  | Add the elements of a list (or any iterable), to the end of the current list |
+| `index()`   | Returns the index of the first element with the specified value              |
+| `insert()`  | Adds an element at the specified position                                    |
+| `pop()`     | Removes the element at the specified position                                |
+| `remove()`  | Removes the item with the specified value                                    |
+| `reverse()` | Reverses the order of the list                                               |
+| `sort()`    | Sorts the list                                                               |
+
+#### Tuple Methods
+
+| Method  | Description                                                                             |
+|---------|-----------------------------------------------------------------------------------------|
+| `count()` | Returns the number of times a specified value occurs in a tuple                         |
+| `index()` | Searches the tuple for a specified value and returns the position of where it was found |
+
+#### Set Methods
+
+| Method                        | Description                                                                    |
+|-------------------------------|--------------------------------------------------------------------------------|
+| `add()`                         | Adds an element to the set                                                     |
+| `clear()`                       | Removes all the elements from the set                                          |
+| `copy()`                        | Returns a copy of the set                                                      |
+| `difference()`                  | Returns a set containing the difference between two or more sets               |
+| `difference_update()`           | Removes the items in this set that are also included in another, specified set |
+| `discard()`                     | Remove the specified item                                                      |
+| `intersection()`                | Returns a set, that is the intersection of two other sets                      |
+| `intersection_update()`         | Removes the items in this set that are not present in other, specified set(s)  |
+| `isdisjoint()`                  | Returns whether two sets have a intersection or not                            |
+| `issubset()`                    | Returns whether another set contains this set or not                           |
+| `issuperset()`                  | Returns whether this set contains another set or not                           |
+| `pop()`                         | Removes an element from the set                                                |
+| `remove()`                      | Removes the specified element                                                  |
+| `symmetric_difference()`        | Returns a set with the symmetric differences of two sets                       |
+| `symmetric_difference_update()` | inserts the symmetric differences from this set and another                    |
+| `union()`                       | Return a set containing the union of sets                                      |
+| `update()`                      | Update the set with the union of this set and others                           |
+
+#### Dictionary Methods
+
+| Method       | Description                                                                                                 |
+|--------------|-------------------------------------------------------------------------------------------------------------|
+| `clear()`      | Removes all the elements from the dictionary                                                                |
+| `copy()`       | Returns a copy of the dictionary                                                                            |
+| `fromkeys()`   | Returns a dictionary with the specified keys and value                                                      |
+| `get()`        | Returns the value of the specified key                                                                      |
+| `items()`      | Returns a list containing a tuple for each key value pair                                                   |
+| `keys()`       | Returns a list containing the dictionary's keys                                                             |
+| `pop()`        | Removes the element with the specified key                                                                  |
+| `popitem()`    | Removes the last inserted key-value pair                                                                    |
+| `setdefault()` | Returns the value of the specified key. If the key does not exist: insert the key, with the specified value |
+| `update()`     | Updates the dictionary with the specified key-value pairs                                                   |
+| `values()`     | Returns a list of all the values in the dictionary                                                          |
+
+### Functions
+Functions are block of code that runs only when invoked (called upon). A function can accept input known as parameters and return an output as well. It is extensively used to simplify code by making a repetitive actions as a function that can be called upon when the action needs to be done.
+In python a function is defined using the `def` keyword followed by a set of curved braces. Functions in python rely heavily on indentation and the function names by convention use `snake_casing`. 
+After defining a function, it can be executed by calling the function and passing the necessary input parameters. Functions can accept parameters and can return values. In case if the function is called without parameters when the definition of the function does contain parameters, python throws an error.
+
+::: info
+> [!important] Parameters v Arguments 
+> From a function's perspective:
+> - A **parameter** is the variable listed inside the parentheses in the function definition.
+> - An **argument** is the value that is sent to the function when it is called.
+:::
+
+Function parameters can also be assigned a default value to be used when the function is called without appropriate arguments.
+
+```python
+# Function with no arguments and no return value
+def print_salutation():
+	"""
+	This function prints "Hello World!" on to the console.
+	This is the example of a Docstring
+	"""
+	print("Hello World!")
+
+print_salutation()
+
+# Function with argument(s) and no retuen value
+def greet_user(userName):
+	"""
+	Action: Greets user based on the user's name as input
+	"""
+	print(f"Hello {userName}!\nHow are you this fine day?")
+
+greet_user("Noah")
+
+# Function with argument(s) and return values
+def sum_numbers(a,b):
+	"""
+	Action: Adds two numbers and returns the result
+	"""
+	c = a + b 
+	return c
+
+# Function with default arguments
+def greet_user(userName = "Guest"):
+	"""
+	Action:
+		Greets user based on the user's name as input.
+		Also contains a default value for arguments
+	"""
+	print(f"Hello {userNAme}!\nHow are you this fine day?")
+
+greet_user("Noah")
+```
 
 ---
-5. [Operators](../../../../Operators.md#)
-6. [Flow Controls and Loops](../../../../Flow%20Controls%20and%20Loops.md#)
+
 7. [Methods and Functions](../../../../Methods%20and%20Functions.md#)
 8. [Object Oriented Programming](Object%20Oriented%20Programming.md#)
 9. [Modules and Packages](Modules%20and%20Packages.md#)
