@@ -400,11 +400,13 @@ None or Null are absence of values where an empty string (`""`) or a zero (`0`) 
 x = None
 ```
 
-> [!abstract] Collections of data in python
-> In python, Lists Tuples, Sets and Dictionaries are the collection data types as they include a collection of similar of different data within them.
+::: info Collections of data in python
+In python, Lists Tuples, Sets and Dictionaries are the collection data types as they include a collection of similar of different data within them.
+:::
 
-> [!question] Arrays in Python
-> Python does not support arrays by default. However the NumPy library can be imported to add support to arrays and array methods. In place of arrays, lists are commonly used.
+::: tip Arrays in Python
+Python does not support arrays by default. However the NumPy library can be imported to add support to arrays and array methods. In place of arrays, lists are commonly used.
+:::
 
 ### Operators
 Operators are entities that are used to perform operations on variables and values. Python provides the following operator types
@@ -502,18 +504,13 @@ Flow controls and loops are crucial part of any programming language. They facil
 **Flow statements** are used to control the flow of code execution based on a logical test. If the test case passes, a specific block of code is executed, and if it fails, another action can be triggered.
 Loops are used to iterate over a condition multiple times, based on a condition. These form the foundation of repeatability and consistency when performing operations with code, as the same code is iterated over multiple times.
 
-::: info
-> [!abstract] Pass, Break and Continue 
-> The `pass` statement can be used to skip a block from getting executed. This is done as conditional blocks cannot be empty (without any code).
-> 
-> The `break` keyword can be used to exit a block of code prematurely without evaluating it. It can be used to exit out of the loop.
-> 
-> The `continue` keyword can be used to skip to the next iteration of the loop while ending the current iteration.
+::: info Pass, Break and Continue 
+- The `pass` statement can be used to skip a block from getting executed. This is done as conditional blocks cannot be empty (without any code).
+- The `break` keyword can be used to exit a block of code prematurely without evaluating it. It can be used to exit out of the loop.
+- The `continue` keyword can be used to skip to the next iteration of the loop while ending the current iteration.
 :::
-
-::: warning
-> [!caution] Premature exits and else blocks
-> When a loop is exited using a `break` statement, the else block will not be executed.
+::: warning Premature exits and else blocks
+When a loop is exited using a `break` statement, the else block will not be executed.
 :::
 
 #### If-elif-else Flow Control Statement
@@ -751,11 +748,10 @@ Functions are block of code that runs only when invoked (called upon). A functio
 In python a function is defined using the `def` keyword followed by a set of curved braces. Functions in python rely heavily on indentation and the function names by convention use `snake_casing`. 
 After defining a function, it can be executed by calling the function and passing the necessary input parameters. Functions can accept parameters and can return values. In case if the function is called without parameters when the definition of the function does contain parameters, python throws an error.
 
-::: info
-> [!important] Parameters v Arguments 
-> From a function's perspective:
-> - A **parameter** is the variable listed inside the parentheses in the function definition.
-> - An **argument** is the value that is sent to the function when it is called.
+::: info Parameters v Arguments 
+From a function's perspective:
+- A **parameter** is the variable listed inside the parentheses in the function definition.
+- An **argument** is the value that is sent to the function when it is called.
 :::
 
 Function parameters can also be assigned a default value to be used when the function is called without appropriate arguments.
