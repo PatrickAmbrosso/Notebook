@@ -16,9 +16,9 @@ export default defineConfig({
 
     // Site Metadata
     logo: '/logo.png',
-    siteTitle: 'The Patfolio',
+    siteTitle: 'Patfolio',
 
-    outline: [2, 4],
+    outline: [2, 3],
     outlineTitle: 'Content Outline',
 
     // Setting up local search with MiniSearch
@@ -102,7 +102,7 @@ function sideBarNotes() {
       collapsed: true,
       link: '/Notes/Software-Engineering/',
       items: [
-        { text: 'Basic Concepts', link: '/Notes/Programming-Languages/Basic-Concepts/' },
+        { text: 'Basic Concepts', link: '/Notes/Programming-Languages/Concepts/' },
         { text: 'Design Patterns', link: '/Notes/Programming-Languages/Design-Patterns/' }
       ]
     },
