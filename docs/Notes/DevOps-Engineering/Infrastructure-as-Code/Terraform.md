@@ -15,10 +15,7 @@ content-tags:
   - IaC-Tools
 ---
 # Hashicorp Terraform
-## Introduction
-- Terraform is an [Infrastructure as Code](./index.md#) tool offering by [HashiCorp](HashiCorp.md#) for building, changing and versioning infrastructure safely and efficiently.
-- It enables application software best practices to infrastructure.
-- It is compatible with a multitude of cloud providers and services.
+Terraform is an [Infrastructure as Code](./index.md#) tool offering by [HashiCorp](HashiCorp.md#) for building, changing and versioning infrastructure safely and efficiently. It enables application software best practices to infrastructure. It is compatible with a multitude of cloud providers and services.
 
 ### Advantages
 1. **IaC for Exotic Providers**
