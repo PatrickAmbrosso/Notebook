@@ -14,7 +14,8 @@ content-type:
 content-tags:
   - tag 1
 ---
-## Understanding IaC
+# Infrastructure as Code (IaC)
+
 
 ## Tools and Services
 1. [Terraform](./Terraform.md#)
