@@ -1,15 +1,11 @@
 ---
-# Basic Metadata
-description: "Managing and provisioning computer data centers through machine-readable definition files"
-tags: 
-alias: 
-# Publisher Metadata
+description: Managing and provisioning computer data centers through machine-readable definition files
+tags: []
+aliases: []
 share: true
-# Site configs
 aside: true
 prev: false
 next: false
-# Dataview Query Fields
 content-type: 
 content-tags:
   - tag 1
@@ -79,7 +75,7 @@ IaC tools come in many shapes and sizes serving a specific problem they set out 
     - Concentrate on provisioning and managing cloud resources, networks, and services across different platforms.
     - Define infrastructure using declarative code and templates.
 3. **Server Templating Tools**
-    - *Tools* - [Packer](Packer.md#), [Docker](../../../../Docker.md#)
+    - *Tools* - [Packer](Packer.md#), [Docker](Docker.md#)
     - Focus on creating custom server images or containers that can be deployed consistently across environments.
     - Enables the creation of immutable infrastructure.
 4. **Container Orchestration Tools**
@@ -95,6 +91,21 @@ IaC tools come in many shapes and sizes serving a specific problem they set out 
 7. **Hybrid Tools**
     - *Tools* - Ansible Terraform Modules, AWS CDK
     - Combine configuration management and orchestration for more comprehensive infrastructure management.
+
+## What's with the terms?
+Here's a brief capture of what each terminology means in the context of computer infrastructure and IaC.
+
+| Terminology       | Description                                                                                                                                                                                                                                                             |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Configuration** | **Infrastructure:** Configuration refers to the settings and parameters that define how a specific component or system operates. It includes details like network configurations, software settings, and security policies.                                             |
+|                   | **IaC:** In the context of IaC, configuration refers to defining the desired state of infrastructure components and services through code or configuration files. IaC tools use these configurations to automate the setup and maintenance of infrastructure resources. |
+|                   | **Tools:** [Ansible](Ansible.md#), [Chef](Chef.md#), [Terraform](./Terraform.md#), [CloudFormation](AWS%20CloudFormation.md#), [Puppet](Puppet.md#)                                                                                                                                                                     |
+|                   |                                                                                                                                                                                                                                                                         |
+| **Provisioning**  | **Infrastructure:** Provisioning involves the process of acquiring and preparing the necessary hardware, software, and resources to make them available for use. This includes setting up servers, storage, and networking.                                             |
+|                   | **IaC:** In IaC, provisioning refers to the automated creation and allocation of infrastructure resources based on code-defined configurations. IaC tools provision resources as per the defined specifications, ensuring consistency and repeatability.                |
+|                   | **Tools:**                                                                                                                                                                                                                                                              |
+|                   |                                                                                                                                                                                                                                                                         |
+|                   |                                                                                                                                                                                                                                                                         |
 
 ## IaC Approaches
 Based on how an IaC tool approaches the definition and management of the resources, there are two ways it can be accomplished.
@@ -140,6 +151,8 @@ Based on how an IaC tool approaches the definition and management of the resourc
     - IaC ensures that development, testing, and production environments are identical, reducing environment-related issues.
 14. **Immutable Infrastructure**
     - With IaC, infrastructure can be treated as immutable, promoting easier updates, rollback, and security.
+
+
 
 ## Tools and Services
 1. [Terraform](./Terraform.md#)
