@@ -29,7 +29,9 @@ The following table aims to perform a brief comparison between manual configurat
 | **Auditing**                | Difficult to track changes                | Changes tracked in version control          |
 | **Updates and Maintenance** | Complex and time-consuming updates        | Streamlines updates and maintenance         |
 
-## IaC and its role in Infrastructure Lifecycle
+## The Fundamentals of IaC
+
+### IaC and Infrastructure Lifecycle
 The concept of infrastructure lifecycle refers to the stages that an IT infrastructure goes through, from planning and design to implementation, operation, and eventual decommissioning. Infrastructure as Code (IaC) plays a crucial role in various phases of this lifecycle, as showcased below.
 
 1. **Planning and Design**
@@ -61,7 +63,7 @@ Apart from this classification, SysAdmins also refer to the infrastructure lifec
 | **Definition**   | Initial *planning*, *design*, and *implementation* phase.                                                          | *Deployment* and *initial configuration* phase.                                                      | Ongoing *operations*, *management*, and *maintenance* phase.                                                   |
 | **Roles of IaC** | IaC defines the infrastructure model<br><br>Templates/blueprints created<br><br>Provides a foundation for deployment | IaC automates resource provisioning<br><br>Ensures consistent setup<br><br>Supports reliable deployments | IaC aids in monitoring configurations<br><br>Automates routine maintenance tasks<br><br>Enables controlled changes |
 
-## Types of IaC tools in the wild
+### Types of IaC tools in the wild
 IaC tools come in many shapes and sizes serving a specific problem they set out to solve. Based on this, following are some of the most commonly used IaC tool types.
 
 1. **Configuration Management Tools**
@@ -90,7 +92,7 @@ IaC tools come in many shapes and sizes serving a specific problem they set out 
     - *Tools* - Ansible Terraform Modules, AWS CDK
     - Combine configuration management and orchestration for more comprehensive infrastructure management.
 
-## What's with the terms?
+### What's with the terms?
 Here's a brief capture of what each terminology means in the context of computer infrastructure and IaC.
 
 | Terminology       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -100,7 +102,66 @@ Here's a brief capture of what each terminology means in the context of computer
 | **Orchestration** | *Infrastructure:* Orchestration is the coordination of multiple individual tasks or processes to work together as a unified system. It ensures that various components interact correctly to achieve a specific outcome<br><br>*IaC:* In IaC, orchestration refers to the automated coordination and management of infrastructure resources and their configurations. IaC tools often handle the sequencing and dependencies of resource provisioning and configuration tasks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **Deployment**    | *Infrastructure:* Deployment is the process of releasing and installing software or applications onto a server or network for operational use<br><br>*IaC:* In IaC, deployment involves automating the setup and configuration of infrastructure resources according to code-defined specifications. It ensures that infrastructure is prepared and ready to host applications and services.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
-## IaC Approaches
+### Advantages of using IaC
+1. **Consistency and Repeatability**
+    - IaC ensures that changes to the infrastructure are *idempotent*, *consistent*, *repeatable* and *predictable*, thus reducing errors and misconfigurations.
+2. **Automation**
+    - IaC automates provisioning, configuration, and management tasks, *saving time* and *reducing* the need for *manual intervention*.
+3. **Version Control**
+    - Infrastructure code can be stored in version control systems, allowing you to *track changes*, collaborate, and *roll back* to previous states if needed.
+4. **Documentation and Self-Service**
+    - Infrastructure code serves as documentation, making it easier for team members to understand configurations and setups.
+    - Self-service provisioning becomes possible, enabling teams to deploy resources using *pre-defined templates*.
+5. **Faster Deployment**
+    - IaC accelerates deployment processes, enabling *quick scaling* and *reducing time-to-market* for applications.
+6. **Scalability**
+    - IaC simplifies scaling by enabling you to define and deploy resources in a consistent manner across various environments.
+7. **Reduced Risk of Human Error**
+    - Automation through IaC reduces the likelihood of manual configuration errors that can lead to vulnerabilities and downtime.
+8. **Infrastructure as Code**
+    - Applying development practices to infrastructure simplifies management and aligns infrastructure with the principles of software development.
+9. **Simplified Testing and QA**
+    - IaC supports *automated testing* of infrastructure code, leading to faster and more consistent quality assurance processes.
+10. **Efficient Collaboration**
+    - Teams can *collaborate* more *effectively* as they work with code, using version control and code review processes.
+11. **Cost Efficiency**
+    - IaC enables efficient resource allocation and management, helping to *optimize infrastructure costs*.
+12. **Compliance and Auditing**
+    - IaC provides an auditable record of changes, making it easier to *maintain compliance* with regulations and internal policies.
+13. **Consistent Environments**
+    - IaC ensures that development, testing, and production environments are identical, reducing environment-related issues.
+14. **Immutable Infrastructure**
+    - With IaC, infrastructure can be treated as *immutable*, promoting *easier updates*, *rollback*, and *security*.
+
+::: info Idempotency
+**Idempotency** is a concept in computer science and mathematics that describes an operation or function that can be *applied multiple times without changing the result* beyond the initial application. In other words, if an idempotent operation is performed once or multiple times, the *final state remains the same* as if it had been performed just once.
+
+- In IaC, idempotent scripts or configurations ensure that the infrastructure resources are created or configured consistently, regardless of how many times the script is executed.
+- When an idempotent IaC script is run:
+    - If the infrastructure resources already exist and match the desired state described in the script, no changes are made.
+    - If the infrastructure resources do not exist or deviate from the desired state, the script creates or configures them to match the specified state.
+- This property is valuable because it allows the application of IaC scripts multiple times without causing unintended changes or disruptions to the infrastructure being worked on.
+- It simplifies management by eliminating the need to track the current state of resources and ensures that the infrastructure remains in a known and consistent state.
+:::
+
+::: info Immutability
+**Immutability** is a concept in computer science and software engineering that refers to the characteristic of an object, data structure, or state that cannot be modified after it is created. In other words, once an immutable object is created, its content or state remains fixed and cannot be changed. Any attempt to modify it results in the creation of a new object or instance with the desired changes, leaving the original object unchanged.
+
+**Immutability in IaC:**
+- In IaC, immutability means that once infrastructure resources are created or configured, their state remains fixed and cannot be altered directly. Any changes or updates to the infrastructure result in the creation of new resources with the desired configurations.
+- Immutability is often associated with the idea of treating infrastructure as disposable. Rather than trying to modify a running server or network configuration, you discard the old resource and create a new one with the updated settings.
+- Immutability aligns with the principle of predictability and reduces the risk of configuration drift or unintended changes in your infrastructure.
+
+**Benefits:**
+- **Predictability:** Immutability ensures that your infrastructure remains consistent and predictable. Each change results in a new resource with the expected configuration.
+- **Reproducibility:** Infrastructure can be easily recreated from code, which is valuable for disaster recovery, scaling, and testing purposes.
+- **Parallelism:** Immutable infrastructure is well-suited for parallel and automated provisioning. Multiple instances of the same resource can be created simultaneously without concerns about shared state.
+- **Consistency:** Immutability helps maintain consistent environments across development, testing, and production, as configurations are fixed and well-defined.
+:::
+
+## Infrastructure Automation
+
+### IaC Approaches
 Based on how an IaC tool approaches the definition and management of the resources, there are two ways it can be accomplished.
 
 | Aspect             | Declarative Approach                                          | Imperative Approach                                      |
@@ -114,38 +175,5 @@ Based on how an IaC tool approaches the definition and management of the resourc
 | **Human Intervention** | Less control over individual steps                            | More control over each step                              |
 | **Examples**           | [Terraform](./Terraform.md#), [CloudFormation](AWS%20CloudFormation.md#), Azure RM templates                 | [Ansible](Ansible.md#), [Puppet](Puppet.md#), [Chef](Chef.md#)                                    |
 
-## Advantages of using IaC
-1. **Consistency and Repeatability**
-    - IaC ensures that your infrastructure is deployed consistently every time, reducing errors caused by manual configurations and ensuring predictable outcomes.
-2. **Automation**
-    - IaC automates provisioning, configuration, and management tasks, saving time and reducing the need for manual intervention.
-3. **Version Control**
-    - Infrastructure code can be stored in version control systems, allowing you to track changes, collaborate, and roll back to previous states if needed.
-4. **Documentation and Self-Service**
-    - Infrastructure code serves as documentation, making it easier for team members to understand configurations and setups.
-    - Self-service provisioning becomes possible, enabling teams to deploy resources using pre-defined templates.
-5. **Faster Deployment**
-    - IaC accelerates deployment processes, enabling quick scaling and reducing time-to-market for applications.
-6. **Scalability**
-    - IaC simplifies scaling by enabling you to define and deploy resources in a consistent manner across various environments.
-7. **Reduced Risk of Human Error**
-    - Automation through IaC reduces the likelihood of manual configuration errors that can lead to vulnerabilities and downtime.
-8. **Infrastructure as Code**
-    - Applying development practices to infrastructure simplifies management and aligns infrastructure with the principles of software development.
-9. **Simplified Testing and QA**
-    - IaC supports automated testing of infrastructure code, leading to faster and more consistent quality assurance processes.
-10. **Efficient Collaboration**
-    - Teams can collaborate more effectively as they work with code, using version control and code review processes.
-11. **Cost Efficiency**
-    - IaC enables efficient resource allocation and management, helping to optimize infrastructure costs.
-12. **Compliance and Auditing**
-    - IaC provides an auditable record of changes, making it easier to maintain compliance with regulations and internal policies.
-13. **Consistent Environments**
-    - IaC ensures that development, testing, and production environments are identical, reducing environment-related issues.
-14. **Immutable Infrastructure**
-    - With IaC, infrastructure can be treated as immutable, promoting easier updates, rollback, and security.
-
-
-
-## Tools and Services
+### Tools and Services
 1. [Terraform](./Terraform.md#)
