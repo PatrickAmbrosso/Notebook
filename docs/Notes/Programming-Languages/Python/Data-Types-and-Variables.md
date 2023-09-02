@@ -109,34 +109,37 @@ The default data types used in Python are given below classified into related ty
 
 | Data Type Group | Data Type              | Notation  | Description                                                                                                                                                       |
 | --------------- | ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Text Types      | String                 | str       | Strings are sequences of alphanumeric characters surrounded by single, double or triple (multi-line) quotations.                                                  |
-| Numeric Types   | Integer                | int       | Int or integer is a whole number (without decimals) both positive or negative and of unlimited length.                                                            |
-| Numeric Types   | Floating Point Numbers | float     | Float or floating point number is a positive or a negative number with one or more decimal digits. It can also be used to denote numbers in scientific notations. |
-| Numeric Types   | Complex Numbers        | complex   | Complex numbers are numbers combinations of real and imaginary numbers. In python, imaginary part is represented using 'j'.                                       |
-| Sequence Types  | List                   | list      | Lists are collections of values of same or different data types. Lists are ordered, changeable, allow duplicates and zero (0) indexed.                            |
-| Sequence Types  | Tuples                 | tuple     | Tuples are collections of values of same or different data types. Tuples are ordered and unchangeable, allow duplicates and zero (0) indexed.                     |
-| Sequence Types  | Range                  | range     |                                                                                                                                                                   |
-| Mapping Types   | Dictionary             | dict      | Dictionaries are a collection of Key-Value pairs of data that are ordered, changeable and does not allow duplicate keys.                                          |
-| Set Types       | Set                    | set       | Sets are collections of values of the same data type and are unordered, unchangeable, unindexed, mutable and does not allow duplicates.                           |
-| Set Types       | Frozen Set             | frozenset | Frozensets are collections of values of the same data type and are unordered, unchangeable, unindexed, immutable and does not allow duplicates.                   |
-| Boolean Types   | Boolean                | bool      | Booleans are used to represent the states of either True or False                                                                                                 |
-| Binary Types    | Bytes                  | bytes     |                                                                                                                                                                   |
-| Binary Types    | Byte Array             | bytearray |                                                                                                                                                                   |
-| Binary Types    | Memory View            | memory    |                                                                                                                                                                   |
-| Note Type       | None Type              | NoneType  | NoneType is not a value, but merely an absence of it. It is similar to null in some other programming languages.                                                  |
+| Text Types      | String                 | `str`       | Strings are sequences of alphanumeric characters surrounded by single, double or triple (multi-line) quotations.                                                  |
+| Numeric Types   | Integer                | `int`       | Int or integer is a whole number (without decimals) both positive or negative and of unlimited length.                                                            |
+| Numeric Types   | Floating Point Numbers | `float`     | Float or floating point number is a positive or a negative number with one or more decimal digits. It can also be used to denote numbers in scientific notations. |
+| Numeric Types   | Complex Numbers        | `complex`   | Complex numbers are numbers combinations of real and imaginary numbers. In python, imaginary part is represented using 'j'.                                       |
+| Sequence Types  | List                   | `list`      | Lists are collections of values of same or different data types. Lists are ordered, changeable, allow duplicates and zero (0) indexed.                            |
+| Sequence Types  | Tuples                 | `tuple`     | Tuples are collections of values of same or different data types. Tuples are ordered and unchangeable, allow duplicates and zero (0) indexed.                     |
+| Sequence Types  | Range                  | `range`     |                                                                                                                                                                   |
+| Mapping Types   | Dictionary             | `dict`      | Dictionaries are a collection of Key-Value pairs of data that are ordered, changeable and does not allow duplicate keys.                                          |
+| Set Types       | Set                    | `set`       | Sets are collections of values of the same data type and are unordered, unchangeable, unindexed, mutable and does not allow duplicates.                           |
+| Set Types       | Frozen Set             | `frozenset` | Frozensets are collections of values of the same data type and are unordered, unchangeable, unindexed, immutable and does not allow duplicates.                   |
+| Boolean Types   | Boolean                | `bool`      | Booleans are used to represent the states of either True or False                                                                                                 |
+| Binary Types    | Bytes                  | `bytes`     |                                                                                                                                                                   |
+| Binary Types    | Byte Array             | `bytearray` |                                                                                                                                                                   |
+| Binary Types    | Memory View            | `memory`    |                                                                                                                                                                   |
+| Note Type       | None Type              | `NoneType`  | NoneType is not a value, but merely an absence of it. It is similar to null in some other programming languages.                                                  |
 
 ### Text Types
 Python has only one default data type for working with strings of any length.
 
 1. **Strings** (`str`)
 	- Strings are sequences of alphanumeric characters surrounded by single, double or triple (multi-line) quotations.
-	- Strings support many default functions and methods which can be found [here](https://www.w3schools.com/python/python_strings_methods.asp)
+	- Strings support many default functions and methods which can be found [here](./Methods-and-Functions.md#string-methods)
 	- These methods that act on the string do not change the existing string, but return a new one.
+	- Strings are basically lists, so elements can be accessed via a `[]` after the string to access a character.
 
 ```python
 # Variable assignment to strings
 name = "Robert Jenkins" # Implicit
-city = str("New York") # Explicit
+identity_number = "DG214122" # Implicit
+city = str("New York") # Explicit Assignment (Double Quotes)
+country = str('United States') # Explicit Assignment (single quotes)
 
 # Accessing part of the string
 message = "Hello World"
