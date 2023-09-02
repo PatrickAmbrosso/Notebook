@@ -15,7 +15,31 @@ content-tags:
   - IaC-Tools
 ---
 # Terraform
-Terraform by [Hashicorp](./Hashicorp.md#) is an [Infrastructure as Code](./index.md#) tool offering by [HashiCorp](./Hashicorp.md#) for building, changing and versioning infrastructure safely and efficiently. It enables application software best practices to infrastructure. It is compatible with a multitude of cloud providers and services.
+Terraform by is an [Infrastructure as Code](Infrastructure%20as%20Code.md#) tool offering by [HashiCorp](Hashicorp.md#) for building, changing and versioning infrastructure safely and efficiently. It enables application software best practices to infrastructure. It is *provider agnostic* and is compatible with a multitude of cloud providers and services. Terraform uses declarative configuration files written in *HashiCorp Configuration Language* or *HCL* which is a cross between YAML and JSON, with additional features.
+
+::: details Just get me started, please...
+**Terraform Basic Concepts**
+1. **Declarative Configuration:** The desired state of the infrastructure is defined in a configuration file using a configuration language called *HCL*, thereby specifying the resources and their properties.
+2. **Providers:** Terraform supports various cloud providers (e.g., AWS, Azure, Google Cloud) and other infrastructure technologies (e.g., Docker, Kubernetes) through provider plugins. To use a particular provider, they have to imported.
+3. **Resources:** Resources are the infrastructure components defined in the configuration, such as virtual machines, databases, networks, and more.
+4. **State:** Terraform is idempotent, and keeps track of the actual state of your infrastructure in a state file. This allows it to plan and execute changes while maintaining resource consistency and idempotency.
+
+**Basic Workflow**
+1. **Configuration:** The configuration (using the HCL syntax) is written to files with a `.tf`  extension. This file specifies the requirements for the resources, their attributes, and dependencies (if any).
+2. **Initialization:** Start a terraform project by running `terraform init`. This downloads the necessary provider plugins and initializes the Terraform workspace.
+3. **Planning:** Running `terraform plan` allows terraform to plan the steps it needs to make to set up the infrastructure as mentioned in the configuration file, helping to understand the changes before they are applied.
+4. **Execution:** Running `terraform apply` spins up terraform to create/modify the infrastructure resources as defined in the configuration. Terraform will make the necessary API calls to the chosen provider(s) as configured and initialized. Note that this command can be run multiple times, and will still yield the same result (idempotency). If any changes are made to the configuration files, terraform updates the infrastructure to match the changes.
+5. **Cleanup:** When a resource or if the entire infrastructure project is no longer required, the `terraform destroy` command can be used to remove them from existence. Care must be taken, as this deletes the virtual infrastructure.
+
+**Resources**
+1. *Documentation*
+	- [Documentation | Terraform](https://developer.hashicorp.com/terraform/docs?ajs_aid=83bae346-8646-48b0-b7ff-ff7369f0858b&product_intent=terraform)
+	- [Terraform Best Practices](https://www.terraform-best-practices.com/)
+2. *Books*
+	- Terraform up and Running by Yevgeniy Brikman
+3. *Hashicorp Tutorials*
+	- [Terraform Tutorials](https://developer.hashicorp.com/terraform)
+:::
 
 ### Advantages
 1. **IaC for Exotic Providers**
@@ -29,7 +53,7 @@ Terraform by [Hashicorp](./Hashicorp.md#) is an [Infrastructure as Code](./index
 	- Quickly create, replicate and destroy infrastructure in the cloud across environments.
 4. **Resource Schedulers**
 	- Terraform can be used to dynamically schedule and use resources
-5. Multi-cloud Deployment
+5. **Multi-cloud Deployment**
 	- Terraform is cloud agnostic and it can provision and maintain resources across a multitude of providers.
 	- One configuration can be used to maintain various cloud providers.
 
@@ -45,7 +69,7 @@ Terraform by [Hashicorp](./Hashicorp.md#) is an [Infrastructure as Code](./index
 
 Terraform is logically split into two main parts.
 1. **Terraform Core**
-	- It is a statically-compiled binary written in the [Go Programming Language](../../../../GoLang.md#).
+	- It is a statically-compiled binary written in the [Go Programming Language](GoLang.md#).
 	- The compiled binary is called the *Terraform CLI*.
 	- The code is open-source and is published on [GitHub](https://github.com/hashicorp/terraform)
 	- The primary responsibilities of Terraform Core are as follows
@@ -55,7 +79,7 @@ Terraform is logically split into two main parts.
 		-   Plan execution
 		-   Communication with plugins over RPC
 2. **Terraform Plugins**
-	- The terraform plugins are also written in the [Go Programming Language](../../../../GoLang.md#).
+	- The terraform plugins are also written in the [Go Programming Language](GoLang.md#).
 	- These are executable binaries that are invoked by the Terraform Core.
 	- There are two types of plugins, namely
 		- *Provider Plugins*
