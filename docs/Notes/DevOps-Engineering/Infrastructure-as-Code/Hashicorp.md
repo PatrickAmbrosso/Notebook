@@ -18,7 +18,7 @@ content-tags:
 **HashiCorp** is a company that develops a suite of *infrastructure automation software products* designed to help organizations *manage*, *secure*, and *scale* their cloud infrastructure and applications. HashiCorp's tools have gained significant popularity in the field of DevOps and cloud-native computing due to their focus on *automation*, *simplicity*, and support for *multi-cloud* and *hybrid cloud* environments.
 
 ## Products and Offerings
-HashiCorp offers the following products in the cloud-native ecosystem.
+HashiCorp offers the many products in the cloud-native ecosystem. Following are some of the most popular ones. For the up to date information visit [the HashiCorp website](https://www.hashicorp.com/) and navigate to the Products section.
 1. **Terraform:**
     - *Description* - Terraform is an open-source Infrastructure as Code (IaC) tool that enables users to define and provision infrastructure resources using a declarative configuration language. It supports various cloud providers, data center technologies, and third-party services.
     - *Use Cases* - Infrastructure provisioning, resource management, and cloud automation.
@@ -41,3 +41,6 @@ HashiCorp offers the following products in the cloud-native ecosystem.
     - *Website* - [Hashicorp Packer](https://www.hashicorp.com/products/packer) - Build, govern and manage any image for any cloud.
 
 Apart from these product offerings, with both a generous free plan and an extensive supportive paid plan in each, HashiCorp also provides a managed cloud platform called HashiCorp Cloud Platform or HCP as a managed platform to run HashiCorp products. 
+
+## Certifications
+For information about certifications provided by HashiCorp, visit the [HashiCorp Certifications](https://www.hashicorp.com/certification) page.
