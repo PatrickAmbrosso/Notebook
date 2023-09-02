@@ -51,6 +51,24 @@ name = input("What is your name? ")
 age = int(input("What is your age? "))
 ```
 
+In Python, escape sequences are special characters that allow the inclusion of non-printable or special characters within strings when using the `print` function. Here are some commonly used escape sequences:
+- `\n` - Newline / Line Break)
+- `\t` - Horizontal Tab
+- `\\` - Backslash
+- `\'` -  Single quote
+- `\"` - Double quote
+
+::: code-group
+```python [Escape Characters]
+# Using escape sequences
+print("Hello\nWorld")
+```
+
+```txt [Output]
+Hello
+World
+```
+
 ### Commenting
 Commenting and Indentation are some of the most commonly used tools when writing code. Both of these help in making the code easier to read, understand and debug. The concept of [Self-Documenting Code](Self-Documenting%20Code.md#) is emphasized here. It means that any code written must be structured in a way that it is evident of what action it performs.
 
