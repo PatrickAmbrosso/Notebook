@@ -153,7 +153,7 @@ The following files and directories will be created and be available when runnin
 	- It is located in the root directory of where the configuration files exist.
 	- It is recommended to include the dependency lock file in the version controlled repositories along with the terraform configuration files.
 6. **Terraform Directory (`.terraform`)**
-
+:::
 
 > [!caution] Handling Resources Manually
 > - Avoid manually changing the resources in their respective GUIs outside of terraform.
