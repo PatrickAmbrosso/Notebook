@@ -32,66 +32,105 @@ Terraform by is an [Infrastructure as Code](Infrastructure%20as%20Code.md#) tool
 5. **Cleanup:** When a resource or if the entire infrastructure project is no longer required, the `terraform destroy` command can be used to remove them from existence. Care must be taken, as this deletes the virtual infrastructure.
 
 **Resources**
-1. *Documentation*
-	- [Documentation | Terraform](https://developer.hashicorp.com/terraform/docs?ajs_aid=83bae346-8646-48b0-b7ff-ff7369f0858b&product_intent=terraform)
-	- [Terraform Best Practices](https://www.terraform-best-practices.com/)
-2. *Books*
-	- Terraform up and Running by Yevgeniy Brikman
-3. *Hashicorp Tutorials*
-	- [Terraform Tutorials](https://developer.hashicorp.com/terraform)
+1. *Documentation* - [Documentation | Terraform](https://developer.hashicorp.com/terraform/docs?ajs_aid=83bae346-8646-48b0-b7ff-ff7369f0858b&product_intent=terraform)
+2. *Documentation* - [Terraform Best Practices](https://www.terraform-best-practices.com/)
+3. *Books* - Terraform up and Running by Yevgeniy Brikman
+4. *Tutorials* - [Terraform Tutorials](https://developer.hashicorp.com/terraform)
 :::
 
-### Advantages
-1. **IaC for Exotic Providers**
-	- Terraform supports major providers including [AWS](Amazon%20Web%20Services.md#), [Azure](Microsoft%20Azure.md#) and [GCP](Google%20Cloud%20Platform.md#).
-	- Other than the most common ones, it supports a wide collection of other providers as well.
-	- Any cloud-based application that can expose an API can be controlled and managed by terraform.
-2. **Multi-tier Applications**
-	- Terraform allows to divide large complex models smaller manageable chunks/applications called as modules.
-	- This helps to reduce the complexity of the configuration being used to manage the resources, while retaining some of the features of imperative IaC tools. 
-3. **Disposable Environment**
-	- Quickly create, replicate and destroy infrastructure in the cloud across environments.
-4. **Resource Schedulers**
-	- Terraform can be used to dynamically schedule and use resources
-5. **Multi-cloud Deployment**
-	- Terraform is cloud agnostic and it can provision and maintain resources across a multitude of providers.
-	- One configuration can be used to maintain various cloud providers.
+## Why Terraform?
+1. **Infrastructure as Code (IaC)**
+    - Terraform allows you to define your infrastructure using code, which means you can version, share, and collaborate on infrastructure configurations just like you would with application code.
+    - This promotes consistency, repeatability, and automation in infrastructure management.
+2. **Multi-Cloud and Hybrid Cloud Support:**
+    - Terraform supports multiple cloud providers (e.g., AWS, Azure, Google Cloud), as well as on-premises and hybrid cloud environments.
+    - You can use a single tool to manage infrastructure across various platforms, avoiding vendor lock-in and enabling multi-cloud strategies.
+3. **Declarative Syntax:**
+    - Terraform uses a declarative syntax to describe the desired state of your infrastructure.
+    - You specify what resources you want and their desired properties without worrying about the step-by-step process of provisioning, making configurations more human-readable and less error-prone.
+4. **Resource Management:**
+    - Terraform provides a wide range of resource types (e.g., virtual machines, databases, networks) for various providers.
+    - You can manage diverse infrastructure components consistently through a single tool, simplifying the management of complex environments.
+5. **Dependency Management:**
+    - Terraform automatically identifies and manages dependencies between resources.
+    - This ensures resources are created or updated in the correct order, reducing errors in your infrastructure.
+6. **State Management:**
+    - Terraform maintains a state file that tracks the actual state of your infrastructure.
+    - This enables Terraform to understand and manage changes to your infrastructure, making it safe to apply changes without causing unexpected disruptions.
+7. **Parallel Execution:**
+    - Terraform can provision multiple resources concurrently, speeding up the deployment of complex infrastructures.
+    - You can scale your infrastructure efficiently, reducing provisioning times.
+8. **Ecosystem of Modules:**
+    - Terraform has a rich ecosystem of community-contributed modules and providers.
+    - You can reuse and share infrastructure configurations, saving time and effort.
+9. **Security and Compliance:**
+    - Terraform supports security best practices through its configurations, including access controls and secret management.
+    - It helps you maintain a secure and compliant infrastructure.
+10. **Extensibility:**
+    - Terraform can be extended through custom providers and modules.
+    - You can adapt Terraform to meet specific organizational or infrastructure requirements.
+11. **Version Control Integration:**
+    - Terraform configurations can be stored in version control systems (e.g., Git).
+    - You can track changes, collaborate with team members, and apply DevOps practices to infrastructure management.
+12. **Community and Support:**
+    - Terraform has a large and active community, which means extensive documentation, tutorials, and community support.
+    - You can find solutions to common challenges and get help when needed.
 
-## Getting Started
-
-
----
-## Core Concepts
+## The Fundamentals
 
 ### Terraform Architecture
 
-![Terraform Core-Plugin Workflow](https://developer.hashicorp.com/_next/image?url=https%3A%2F%2Fcontent.hashicorp.com%2Fapi%2Fassets%3Fproduct%3Dterraform-docs-common%26version%3Drefs%252Fheads%252Fmain%26asset%3Dwebsite%252Fimg%252Fdocs%252Fterraform-plugin-overview.png%26width%3D4096%26height%3D728&w=3840&q=75)
+![](https://patrickambrose-site-assets.s3.ap-south-1.amazonaws.com/Terraform-Architecture.png)
 
-Terraform is logically split into two main parts.
-1. **Terraform Core**
-	- It is a statically-compiled binary written in the [Go Programming Language](GoLang.md#).
-	- The compiled binary is called the *Terraform CLI*.
-	- The code is open-source and is published on [GitHub](https://github.com/hashicorp/terraform)
-	- The primary responsibilities of Terraform Core are as follows
-		-   Infrastructure as code: reading and interpolating configuration files and modules
-		-   Resource state management
-		-   Construction of the [Resource Graph](https://developer.hashicorp.com/terraform/internals/graph)
-		-   Plan execution
-		-   Communication with plugins over RPC
-2. **Terraform Plugins**
-	- The terraform plugins are also written in the [Go Programming Language](GoLang.md#).
-	- These are executable binaries that are invoked by the Terraform Core.
-	- There are two types of plugins, namely
-		- *Provider Plugins*
-		- *Provisioner Plugins*
-	- The primary responsibilities of Provider Plugins are as follows
-		-   Initialization of any included libraries used to make API calls
-		-   Authentication with the Infrastructure Provider
-		-   Define Resources that map to specific Services
-	- The primary responsibilities of Provisioner Plugins are as follows
-		-   Executing commands or scripts on the designated Resource after creation, or on destruction.
+1. **Terraform Configuration Files (.tf)**
+    - Configuration files are written in *HashiCorp Configuration Language (HCL)* which is similar to JSON.
+    - These files *define the desired state* of your infrastructure, specifying the resources, their properties, and dependencies.
+    - These configuration files have an extension of `.tf`
+    - Configuration files are the heart of Terraform. They describe what infrastructure should be created or modified.
+    - Services such as [VCS](Version%20Control%20System.md#) can be integrated to the configuration files to make collaboration possible and easier.
+2. **Terraform CLI (Command-Line Interface)**
+    - The Terraform CLI is the primary tool for *interacting with Terraform*.
+    - The terraform CLI is written in [GoLang](GoLang.md#).
+    - It provides various commands for *initializing*, *planning*, *applying* changes, and more.
+    - The CLI is how users interact with Terraform, executing commands to manage infrastructure.
+3. **Providers**
+    - Providers are plugins that *enable Terraform to communicate* with specific infrastructure platforms or services (e.g., AWS, Azure, Google Cloud, Docker).
+    - Each provider has its own set of resources and data sources.
+    - Providers act as *intermediaries between Terraform and the target infrastructure*, allowing Terraform to create and manage resources.
+4. **Terraform Core**
+    - The core of Terraform, often referred to simply as "Terraform," *interprets* and *processes* configuration files, manages the state file, performs resource CRUD operations, and handles dependency resolution.
+    - It is also written in [GoLang](GoLang.md#) and comes bundled with the CLI. 
+    - Terraform Core is responsible for *orchestrating the entire infrastructure provisioning process*.
+5. **State File**
+    - Terraform maintains a state file (typically named `terraform.tfstate`) that records the *current state of the infrastructure resources*. It keeps track of resource attributes and their relationships.
+    - The state file allows Terraform to determine the *difference between* the *desired* state (from configuration) and the *actual* state (from the state file).
+    - It is critical for making changes without disruptions.
+    - This file SHOULD NOT be edited manually.
+6. **Backends (Local and Remote)**
+    - Backend is where the state files are stored.
+    - This can be either *local file storage* where the Terraform environment is run or it could be on the *remote/cloud* in services such as AWS S3, Azure Blob Storage or even a database.
+    - State backends *affect state management and collaboration*.
+    - State backends *store state files*, *enable collaboration* on terraform managed infrastructure.
+7. **Operations (Local and Remote)**
+    - Terraform can perform operations either *locally* where it is installed or *remotely* using a remote execution service such as *Terraform Cloud* or *HashiCorp Consul*.
+    - This allows for *collaboration*, *locking*, and remote *state management*.
+    - Remote operations *enhance collaboration* and provide additional features like *state locking* to *prevent concurrent changes*.
+8. **External Services (Optional)**
+    - External services, such as version control systems (e.g., Git), secret management tools (e.g., HashiCorp Vault), or continuous integration/continuous deployment (CI/CD) pipelines, can be integrated with Terraform to enhance its functionality.
+    - External services *complement Terraform* by providing version control, secret management, automation, and other capabilities.
 
-### Terraform Files and Directories
+### Terraform Lifecycle
+A barebones lifecycle of operations that can be carried out in a terraform configuration would consist of the following steps.
+1. **Code** - Preparing and setting up the configuration file
+2. **initializing** - Initialize all the providers and dependencies of the configuration for terraform to manage the required resources.
+3. **Validation** - Check if the configuration has any mistakes in syntax or logic.
+4. **Plan** - Ideate the sequence of operations that is required to be performed to arrive at the said configuration.
+5. **Apply** - Do all the steps to arrive at the said configuration.
+6. **Destroy** - Destroy all the resources that are managed by the the configuration.
+
+### Basic Workflow
+::: info What is in a .terraform directory?
+The following files and directories will be created and be available when running a terraform environment. 
 1. **Terraform Variables File (`.tfvars`)**
 2. **Terraform Configuration Files (`.tf` )**
 	- Files ending with a `.tf` are terraform configuration files.
@@ -126,14 +165,9 @@ Terraform is logically split into two main parts.
 > - Terraform uses the .tfstate file to provision, manage and destroy resources.
 > - Manual edits to this file might cause unforseen issues on the actual resources managed by terraform.
 
-### Basic Lifecycle of a Terraform Deployment
-A barebones lifecycle of operations that can be carried out in a terraform configuration would consist of the following steps.
-1. **Code** - Preparing and setting up the configuration file
-2. **initializing** - Initialize all the providers and dependencies of the configuration for terraform to manage the required resources.
-3. **Validation** - Check if the configuration has any mistakes in syntax or logic.
-4. **Plan** - Ideate the sequence of operations that is required to be performed to arrive at the said configuration.
-5. **Apply** - Do all the steps to arrive at the said configuration.
-6. **Destroy** - Destroy all the resources that are managed by the the configuration.
+### Best Practices
+
+## Beyond the Basics
 
 ### Backend
 - A backend defines where terraform stores its state data files. this is DynamoDB 
@@ -168,27 +202,13 @@ A barebones lifecycle of operations that can be carried out in a terraform confi
 	- Run `terraform apply` to apply the modified terraform configuration.
 	- Terraform will not migrate the backend to the S3 Bucket and DynamoDB combination.
 
-## Terraform Objects
+### Terraform Objects
 1. Resources
 2. Data
 3. Variables
 4. Output
 
-### Resources
-- s
-
-### Data
-
-
-### Variables
-
-
-### Outputs
-
-
-
-
-## Terraform Commands
+### Terraform Commands
  
 > [!important] General Terraform Syntax
 > `terraform [global options] <subcommand> [args]` 
