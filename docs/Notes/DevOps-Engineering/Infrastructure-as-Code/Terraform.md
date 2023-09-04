@@ -121,51 +121,87 @@ Terraform by is an [Infrastructure as Code](Infrastructure%20as%20Code.md#) tool
 
 ### Terraform Lifecycle
 A barebones lifecycle of operations that can be carried out in a terraform configuration would consist of the following steps.
-1. **Code** - Preparing and setting up the configuration file
-2. **initializing** - Initialize all the providers and dependencies of the configuration for terraform to manage the required resources.
-3. **Validation** - Check if the configuration has any mistakes in syntax or logic.
-4. **Plan** - Ideate the sequence of operations that is required to be performed to arrive at the said configuration.
-5. **Apply** - Do all the steps to arrive at the said configuration.
-6. **Destroy** - Destroy all the resources that are managed by the the configuration.
+1. **Initialization (terraform init):**
+    - Initialization is the first step when working with a new or existing Terraform configuration.
+    - It sets up the working directory, downloads required provider plugins, and prepares the configuration for use.
+    - To initialize a terraform project, run `terraform init`
+    - This command is typically run only once per project to prepare it for use.
+2. **Configuration:**
+    - Configurations are written in *Hashicorp Configuration Language* or *HCL* in files that end in a `.tf` extension. 
+    - These files define the infrastructure by specifying the resources, their properties, and dependencies.
+    - These files are continuously edited to refine the configuration as per the desired infrastructure state.
+    - A terraform project can have multiple `.tf` files, and they all will be considered as one singular file when terraform processes the configuration. So it is possible to logically separate and manage the terraform configuration files.
+3. **Planning**
+    - Terraform allows to visualize the changes that the current configuration makes by running the `terraform plan` command.
+    - This command identifies the creation, modification, or destruction of resources.
+    - This command can be run as many times, as and when changes are made to the configuration files.
+    - Running this command gives a glimpse of what changes terraform is about to make to the existing infrastructure to be in-line with the configuration files.
+4. **Applying Changes**
+    - Applying changes is where Terraform executes the actions outlined in the plan.
+    - It creates, updates, or destroys resources as needed to reach the desired state.
+    - This can be performed by running the `terraform apply` command.
+    - This command can be run whenever changes to the configuration have been made.
+    - However, even if the command is run multiple times, the final state would always be the same, thus achieving idempotency.
+5. **State Management:**
+    - Terraform maintains a state file (typically named `terraform.tfstate`) to track the actual state of the infrastructure the configuration file(s) manage. It records resource attributes and relationships.
+    - Terraform reads and updates the state file during apply and plan operations.
+    - Terraform uses the state file to manage infrastructure changes and avoid disruptions.
+    - This file must not be edited manually, as this might lead to some unexpected results.
+6. **Updating Configuration:**
+    - As infrastructure requirements evolve, the Terraform configuration files are updated to reflect the desired state.
+    - Changes might include adding new resources, modifying properties, or removing resources.
+    - Thus, these configuration files with `.tf` are continuously updated and maintained to be in line with the changing infrastructure needs.
+7. **Destroying Resources**
+    - When resources are no longer needed, you can use the `terraform destroy` command to remove them.
+    - Be cautious, as *THIS ACTION PERMANENTLY DESTROYS THE RESOURCES*.
+    - To destroy resources when no longer needed, run the `terraform destroy` command.
+    - This command is used sparingly, especially when the infrastructure is no longer needed. Production environments rarely see this command when in use, and this might be used in testing, dev or other environments whenever their purpose is served and they need to be decommissioned.
+8. **Workspace Management (Optional):**
+    - Terraform workspaces allow the maintenance of multiple environments such as *development*, *staging*, and *production* with separate state files.
+    - Each workspace can have its own configuration.
+    - To manage workspaces, use the following commands
+        - `terraform workspace new` - To create a new workspace
+        - `terraform workspace select` - To work with a specific workspace
+        - `terraform workspace delete` - To remove a workspace
+    - Workspaces are useful for managing configurations across different environments or teams.
+9. **Collaboration (Optional):**
+    - In team environments, collaboration tools like version control systems (e.g., Git), Terraform Cloud, or other CI/CD pipelines can be integrated to facilitate collaboration and automation.
+    - Collaborative tools help manage changes, share configurations, and automate infrastructure deployments.
 
-### Basic Workflow
-::: info What is in a .terraform directory?
-The following files and directories will be created and be available when running a terraform environment. 
-1. **Terraform Variables File (`.tfvars`)**
-2. **Terraform Configuration Files (`.tf` )**
-	- Files ending with a `.tf` are terraform configuration files.
-	- Terraform combines all the files with a `.tf` ending and considers as a single configuration file.
-	- This aids in segmenting code for organization.
-	- These files are written in *HashiCorp Configuration Language (HCL)* (resembles JSON).
-	- These configuration files explain terraform the desired state of the resources that need to be managed by terraform.
-	- This forms the basis of the imperative approach to IaC.
-3. **Terraform State File (`terraform.tfstate`)**
-	* It describes the actual state of the resources managed by terraform.
-	- This environment could correspond to resources, data
-	- `.tfstate` files are written in JSON.
-	- `.tfstate` files can be stored locally or remotely.
-	- The state files tend to contain passwords and other credentials, so it is the responsibility of the user to encrypt and handle the state files.
-4. **Terraform Dependency Lock File (`.terraform.lock.hcl`)**
-	- Dependency locks are used only in Terraform version 0.14 or higher.
-	- `.terraform.lock.hcl` file is used to lock and track the dependencies across providers and modules in use in the current terraform configuration files.
-	- The syntax is NOT terraform code, but follows the same low-level syntax of HCL, thus it has the extension `.hcl`. 
-	- It gets created when the `terraform init` command is run.
-	- It is located in the root directory of where the configuration files exist.
-	- It is recommended to include the dependency lock file in the version controlled repositories along with the terraform configuration files.
-6. **Terraform Directory (`.terraform`)**
+::: info Typical files found in a terraform project
+A generic version controlled terraform project tends to have the following files serving their use cases. 
+
+| File/Directory                        | Purpose                                                  |
+| ------------------------------------- | -------------------------------------------------------- |
+| `.tf` Files                           | *Define* infrastructure resources and dependencies.        |
+| `.tfvars` Files                       | *Provide values* for declared variables.                   |
+| `.tfstate` File                       | *Track* the actual *state* of infrastructure.                |
+| `.tfstate.backup` File                | *Backup* of the *state* file.                                |
+| `.tfstate.lock` File                  | *Lock* file to prevent *concurrent access*.                  |
+| `.terraform` Directory                | Contains *downloaded provider plugins* and internal files. |
+| `terraform.tfvars.example` (Optional) | Example variable input file.                             |
+| `.gitignore` (Optional)               | Excludes files/directories from version control.         |
+| `README.md` (Optional)                | Project documentation and usage instructions.            |
+| `.git` Directory (Optional)           | Git version control metadata.                            |
+
 :::
 
-> [!caution] Handling Resources Manually
-> - Avoid manually changing the resources in their respective GUIs outside of terraform.
-> - This can cause huge problems in the state that is maintained by terraform.
-> - Always manage the resources within terraform only.
+::: warning Handling Resources Manually
+- Avoid manually changing the resources in their respective GUIs outside of terraform.
+- This can cause huge problems in the state that is maintained by terraform.
+- Always manage the resources within terraform only.
+:::
 
-> [!danger] Editing the `.tfstate` file
-> - Do not manually edit the .tfstate file.
-> - Terraform uses the .tfstate file to provision, manage and destroy resources.
-> - Manual edits to this file might cause unforseen issues on the actual resources managed by terraform.
+::: danger Editing the `.tfstate` file
+- Do not manually edit the .tfstate file.
+- Terraform uses the .tfstate file to provision, manage and destroy resources.
+- Manual edits to this file might cause unforeseen issues on the actual resources managed by terraform.
+:::
+
+### Basic Workflow
 
 ### Best Practices
+
 
 ## Beyond the Basics
 
