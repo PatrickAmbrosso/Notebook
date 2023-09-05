@@ -168,7 +168,6 @@ A barebones lifecycle of operations that can be carried out in a terraform confi
     - In team environments, collaboration tools like version control systems (e.g., Git), Terraform Cloud, or other CI/CD pipelines can be integrated to facilitate collaboration and automation.
     - Collaborative tools help manage changes, share configurations, and automate infrastructure deployments.
 
-::: info Typical files found in a terraform project
 A generic version controlled terraform project tends to have the following files serving their use cases. 
 
 | File/Directory                        | Purpose                                                  |
@@ -183,8 +182,6 @@ A generic version controlled terraform project tends to have the following files
 | `.gitignore` (Optional)               | Excludes files/directories from version control.         |
 | `README.md` (Optional)                | Project documentation and usage instructions.            |
 | `.git` Directory (Optional)           | Git version control metadata.                            |
-
-:::
 
 ::: warning Handling Resources Manually
 - Avoid manually changing the resources in their respective GUIs outside of terraform.
@@ -201,7 +198,21 @@ A generic version controlled terraform project tends to have the following files
 ### Basic Workflow
 
 ### Best Practices
-
+1. **IaC under Version Control** - Store the Terraform configurations in a version control system (e.g., Git) to track changes, collaborate with team members, and maintain a history of the infrastructure code as it evolves over time. This allows to rollback to a previous working version if things go south.
+2. **Use Modules to keep it DRY** - Organize your Terraform code into reusable modules. Modularization improves code maintainability and encourages consistency across projects.
+3. **Centrally manage state files** - Use a remote state backend for team collaboration and state locking. It prevents concurrent access issues and provides a central location for your state file.
+4. **Define variables separately** - Declare variables and input values in separate variable files. This enhances code readability and allows for easy customization.
+5. **Good Naming Conventions** - Follow consistent naming conventions for resources, variables, and outputs. Naming clarity reduces confusion and errors.
+6. **Better Dependency Management** - Define resource dependencies explicitly. Terraform's dependency graph should accurately represent the order of resource creation.
+7. **Use Data Sources** - Leverage data sources to fetch information (e.g., AMI IDs, subnet IDs) dynamically rather than hardcoding values. This ensures that your configurations remain up-to-date.
+8. **Immutable Infrastructure** - Embrace the principle of immutable infrastructure by recreating resources when updates are needed rather than modifying them in-place. This reduces drift and ensures consistency.
+9. **Security Best Practices** - Implement security best practices, such as secure secret management (e.g., HashiCorp Vault), access control, and proper handling of sensitive data.
+10. **Always Review and Test** - Regularly review and test your Terraform configurations to catch issues early. Use `terraform plan` to preview changes before applying them.
+11. **Docs, Docs, Docs** - Maintain comprehensive documentation that includes usage instructions, variable descriptions, and explanations of resource configurations.
+12. **Integrate CI/CD** - Integrate Terraform into your CI/CD pipeline for automated testing, validation, and deployment. Automated workflows improve efficiency and reduce manual errors.
+13. **Isolate Environments** - Isolate environments (e.g., development, staging, production) with separate Terraform workspaces or state files. This prevents accidental changes in production.
+14. **Perform Monitoring and Logging** - Implement monitoring and logging for your infrastructure to detect and respond to issues promptly. Services like AWS CloudWatch and Azure Monitor can be integrated.
+15. **Keep em updated** - Keep Terraform, provider plugins, and modules up-to-date to benefit from new features, improvements, and security patches
 
 ## Beyond the Basics
 
