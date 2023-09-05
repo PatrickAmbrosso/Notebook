@@ -15,28 +15,7 @@ content-tags:
   - IaC-Tools
 ---
 # Terraform
-Terraform by is an [Infrastructure as Code](Infrastructure%20as%20Code.md#) tool offering by [HashiCorp](Hashicorp.md#) for building, changing and versioning infrastructure safely and efficiently. It enables application software best practices to infrastructure. It is *provider agnostic* and is compatible with a multitude of cloud providers and services. Terraform uses declarative configuration files written in *HashiCorp Configuration Language* or *HCL* which is a cross between YAML and JSON, with additional features.
-
-::: details Just get me started, please...
-**Terraform Basic Concepts**
-1. **Declarative Configuration:** The desired state of the infrastructure is defined in a configuration file using a configuration language called *HCL*, thereby specifying the resources and their properties.
-2. **Providers:** Terraform supports various cloud providers (e.g., AWS, Azure, Google Cloud) and other infrastructure technologies (e.g., Docker, Kubernetes) through provider plugins. To use a particular provider, they have to imported.
-3. **Resources:** Resources are the infrastructure components defined in the configuration, such as virtual machines, databases, networks, and more.
-4. **State:** Terraform is idempotent, and keeps track of the actual state of your infrastructure in a state file. This allows it to plan and execute changes while maintaining resource consistency and idempotency.
-
-**Basic Workflow**
-1. **Configuration:** The configuration (using the HCL syntax) is written to files with a `.tf`  extension. This file specifies the requirements for the resources, their attributes, and dependencies (if any).
-2. **Initialization:** Start a terraform project by running `terraform init`. This downloads the necessary provider plugins and initializes the Terraform workspace.
-3. **Planning:** Running `terraform plan` allows terraform to plan the steps it needs to make to set up the infrastructure as mentioned in the configuration file, helping to understand the changes before they are applied.
-4. **Execution:** Running `terraform apply` spins up terraform to create/modify the infrastructure resources as defined in the configuration. Terraform will make the necessary API calls to the chosen provider(s) as configured and initialized. Note that this command can be run multiple times, and will still yield the same result (idempotency). If any changes are made to the configuration files, terraform updates the infrastructure to match the changes.
-5. **Cleanup:** When a resource or if the entire infrastructure project is no longer required, the `terraform destroy` command can be used to remove them from existence. Care must be taken, as this deletes the virtual infrastructure.
-
-**Resources**
-1. *Documentation* - [Documentation | Terraform](https://developer.hashicorp.com/terraform/docs?ajs_aid=83bae346-8646-48b0-b7ff-ff7369f0858b&product_intent=terraform)
-2. *Documentation* - [Terraform Best Practices](https://www.terraform-best-practices.com/)
-3. *Books* - Terraform up and Running by Yevgeniy Brikman
-4. *Tutorials* - [Terraform Tutorials](https://developer.hashicorp.com/terraform)
-:::
+Terraform by is an [Infrastructure as Code](Infrastructure%20as%20Code.md#) tool offering by [HashiCorp](Hashicorp.md#) for building, changing and versioning infrastructure safely and efficiently. It enables application software best practices to infrastructure. It is *provider agnostic* and is compatible with a multitude of cloud providers and services. Terraform uses declarative configuration files written in *HashiCorp Configuration Language* or *HCL* which JSON, but with additional features.
 
 ## Why Terraform?
 1. **Infrastructure as Code (IaC)**
@@ -190,29 +169,37 @@ A generic version controlled terraform project tends to have the following files
 :::
 
 ::: danger Editing the `.tfstate` file
-- Do not manually edit the .tfstate file.
-- Terraform uses the .tfstate file to provision, manage and destroy resources.
+- Do not manually edit the `.tfstate` file.
+- Terraform uses the `.tfstate` file to provision, manage and destroy resources.
 - Manual edits to this file might cause unforeseen issues on the actual resources managed by terraform.
 :::
 
 ### Basic Workflow
 
+Following are some simple Terraform projects to understand the basic workflow in setting up a terraform project.
+- [Setup a Simple HTTP server on AWS with Terraform](Setup%20a%20Simple%20HTTP%20server%20on%20AWS%20with%20Terraform.md#)
+- [Setting up a Simple Nginx Server on Docker with Terraform](Setting%20up%20a%20Simple%20Nginx%20Server%20on%20Docker%20with%20Terraform.md#)
+
+::: tip Working with Providers
+When starting to work with a new provider, always checkout the documentation. Terraform's providers are usually well documented, with examples of code to implement a particular feature of the provider, so you get that copy pasta action.
+:::
+
 ### Best Practices
 1. **IaC under Version Control** - Store the Terraform configurations in a version control system (e.g., Git) to track changes, collaborate with team members, and maintain a history of the infrastructure code as it evolves over time. This allows to rollback to a previous working version if things go south.
-2. **Use Modules to keep it DRY** - Organize your Terraform code into reusable modules. Modularization improves code maintainability and encourages consistency across projects.
-3. **Centrally manage state files** - Use a remote state backend for team collaboration and state locking. It prevents concurrent access issues and provides a central location for your state file.
+2. **Use Modules to keep it DRY** - Modules are a way to simplify repeated terraform code in the IaC configuration. Modules promote DRY (Do not Repeat Yourself) code. There are several prebuilt modules available as well, that speed up the IaC development process. Modularization improves code maintainability and encourages consistency across projects.
+3. **Centrally manage state files** - Using a remote backend to store and lock state files is preferred especially when more than one individual contributes to an IaC. This allows for team collaboration and state locking. It prevents concurrent access issues and provides a central location for the state file.
 4. **Define variables separately** - Declare variables and input values in separate variable files. This enhances code readability and allows for easy customization.
 5. **Good Naming Conventions** - Follow consistent naming conventions for resources, variables, and outputs. Naming clarity reduces confusion and errors.
 6. **Better Dependency Management** - Define resource dependencies explicitly. Terraform's dependency graph should accurately represent the order of resource creation.
-7. **Use Data Sources** - Leverage data sources to fetch information (e.g., AMI IDs, subnet IDs) dynamically rather than hardcoding values. This ensures that your configurations remain up-to-date.
-8. **Immutable Infrastructure** - Embrace the principle of immutable infrastructure by recreating resources when updates are needed rather than modifying them in-place. This reduces drift and ensures consistency.
-9. **Security Best Practices** - Implement security best practices, such as secure secret management (e.g., HashiCorp Vault), access control, and proper handling of sensitive data.
+7. **Use Data Sources** - Leverage data sources to fetch information (e.g., AMI IDs, subnet IDs) dynamically rather than hardcoding values. This ensures that the configurations remain up-to-date.
+8. **Immutable Infrastructure** - Embrace the principle of immutable infrastructure by recreating resources when updates are needed rather than modifying them in-place. This reduces configuration drift and ensures consistency.
+9. **Security Best Practices** - Implement security best practices, such as secure secret management (e.g., HashiCorp Vault), strict access control, and proper handling of sensitive data.
 10. **Always Review and Test** - Regularly review and test your Terraform configurations to catch issues early. Use `terraform plan` to preview changes before applying them.
 11. **Docs, Docs, Docs** - Maintain comprehensive documentation that includes usage instructions, variable descriptions, and explanations of resource configurations.
-12. **Integrate CI/CD** - Integrate Terraform into your CI/CD pipeline for automated testing, validation, and deployment. Automated workflows improve efficiency and reduce manual errors.
+12. **Integrate CI/CD** - Integrate Terraform into CI/CD pipelines for automated testing, validation, and deployment. Automated workflows improve efficiency and reduce manual errors. Almost never run terraform code manually, and always run it via a pipeline.
 13. **Isolate Environments** - Isolate environments (e.g., development, staging, production) with separate Terraform workspaces or state files. This prevents accidental changes in production.
-14. **Perform Monitoring and Logging** - Implement monitoring and logging for your infrastructure to detect and respond to issues promptly. Services like AWS CloudWatch and Azure Monitor can be integrated.
-15. **Keep em updated** - Keep Terraform, provider plugins, and modules up-to-date to benefit from new features, improvements, and security patches
+14. **Perform Monitoring and Logging** - Implement monitoring and logging for the infrastructure to detect and respond to issues promptly. Services like AWS CloudWatch and Azure Monitor can be integrated.
+15. **Keep em updated** - Keep Terraform, provider plugins, and modules up-to-date to benefit from new features, improvements, and security patches.
 
 ## Beyond the Basics
 
@@ -279,4 +266,8 @@ A generic version controlled terraform project tends to have the following files
 	- **Flags:** 
 		- `--auto-approve` - Does not wait for confirmation, executes it straight, provided no variables need to be supplied.
 
-
+## Resources
+1. *Documentation* - [Documentation | Terraform](https://developer.hashicorp.com/terraform/docs?ajs_aid=83bae346-8646-48b0-b7ff-ff7369f0858b&product_intent=terraform)
+2. *Documentation* - [Terraform Best Practices](https://www.terraform-best-practices.com/)
+3. *Books* - Terraform up and Running by Yevgeniy Brikman
+4. *Tutorials* - [Terraform Tutorials](https://developer.hashicorp.com/terraform)
