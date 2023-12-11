@@ -31,17 +31,17 @@ Some of the key features that python emphasizes are as follows
 Today, Python has grown to become one of the most popular programming languages due to its versatility, ease of learning, and widespread use across diverse domains, including web development, data science, artificial intelligence, automation, and more.
 
 ## Core Concepts
-- [Getting Started](./Getting-Started.md#) - Installing Python and running the mandatory 'Hello World' code
-- [Fundamentals](./Fundamentals.md#) - Installing Python and running the mandatory 'Hello World' code
-- [Data Types and Variables](./Data-Types-and-Variables.md#) - Installing Python and running the mandatory 'Hello World' code
-- [Operators](./Operators.md#) - Installing Python and running the mandatory 'Hello World' code
-- [Flow Control and Loops](./Flow-Control-and-Loops.md#) - Installing Python and running the mandatory 'Hello World' code
-- [Methods and Functions](./Methods-and-Functions.md#) - Working with custom/user-defined blocks of code. Functions allow making the code easier to read, less verbose and concise
+- [Getting Started](./Getting-Started.md) - Installing Python and running the mandatory 'Hello World' code
+- [Fundamentals](./Fundamentals.md) - Installing Python and running the mandatory 'Hello World' code
+- [Data Types and Variables](./Data-Types-and-Variables.md) - Installing Python and running the mandatory 'Hello World' code
+- [Operators](./Operators.md) - Installing Python and running the mandatory 'Hello World' code
+- [Flow Control and Loops](./Flow-Control-and-Loops.md) - Installing Python and running the mandatory 'Hello World' code
+- [Methods and Functions](./Methods-and-Functions.md) - Working with custom/user-defined blocks of code. Functions allow making the code easier to read, less verbose and concise
 
 
 ## Beyond the basics
-1. [Object Oriented Programming](Object%20Oriented%20Programming.md#)
-2. [Modules and Packages](Modules%20and%20Packages.md#)
-3. [Errors and Exceptions Handling](Errors%20and%20Exceptions%20Handling.md#)
-4. [Decorators](Decorators.md#)
-5. [Generators](Generators.md#)
+1. [Object Oriented Programming](Object%20Oriented%20Programming.md)
+2. [Modules and Packages](Modules%20and%20Packages.md)
+3. [Errors and Exceptions Handling](Errors%20and%20Exceptions%20Handling.md)
+4. [Decorators](Decorators.md)
+5. [Generators](Generators.md)
