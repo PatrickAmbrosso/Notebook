@@ -36,8 +36,10 @@ Python 3.11.3
 :::
 Now, Python is up and running and ready to change the world. But before changing the world, here's a customary `Hello World` example in python.
 
+Hello World Example
+
 ::: code-group
-```python [Hello World Example]
+```python [Code]
 print("Hello World")
 ```
 
