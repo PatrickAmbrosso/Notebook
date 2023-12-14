@@ -1,21 +1,9 @@
 ---
-# Basic Metadata
-description: 
-tags: 
-alias:
-# Publisher Metadata
+title: Python
+description: All about the python programming language
+tags:
+  - Category/Engineering-and-Technology
 share: true
-# Site configs
-aside: true
-prev: false
-next: false
-# Dataview Query Fields
-content-type: 
-content-tags:
-  - Computer-Language
-  - Object-Oriented
-  - Interpreted
-content-sort-order: 1
 ---
 # Python
 Python is a versatile, high-level programming language known for its readability and clean syntax. **Guido van Rossum** created Python and released its first version in 1991. Python's development began in the late 1980s when Guido van Rossum, a Dutch programmer, started working on it during his Christmas holidays in December 1989. He aimed to create a language that emphasized code readability and ease of use, allowing developers to express concepts in fewer lines of code than languages like C++ or Java. The first official version, *Python 0.9.0*, was released in *February 1991*. Python's design philosophy, often summarized as "The Zen of Python," emphasizes *simplicity*, *readability*, and a focus on *practicality*. *Python 2.0*, released in *2000*, introduced list comprehensions and garbage collection. *Python 3.0*, released in *2008*, marked a significant shift with various changes to improve consistency and eliminate redundancies in the language.
@@ -45,3 +33,4 @@ Today, Python has grown to become one of the most popular programming languages 
 3. [Errors and Exceptions Handling](Errors%20and%20Exceptions%20Handling.md)
 4. [Decorators](Decorators.md)
 5. [Generators](Generators.md)
+
